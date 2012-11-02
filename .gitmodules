@@ -1,9 +1,6 @@
 [submodule "mu-plugins/options-framework-plugin"]
 	path = mu-plugins/options-framework-plugin
 	url = https://github.com/devinsays/options-framework-plugin.git
-[submodule "mu-plugins/sld-custom-content-and-taxonomies"]
-	path = mu-plugins/sld-custom-content-and-taxonomies
-	url = https://github.com/jkudish/sld-custom-content-and-taxonomies.git
 [submodule "mu-plugins/cmb"]
 	path = mu-plugins/cmb
 	url = https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress.git
@@ -19,9 +16,9 @@
 [submodule "plugins/wp-query-multiple-taxonomies"]
 	path = plugins/wp-query-multiple-taxonomies
 	url = https://github.com/scribu/wp-query-multiple-taxonomies.git
-[submodule "plugins/wp-front-end-editor"]
-	path = plugins/wp-front-end-editor
-	url = https://github.com/scribu/wp-front-end-editor.git
 [submodule "themes/roots"]
 	path = themes/roots
 	url = https://github.com/retlehs/roots.git
+[submodule "plugins/front-end-editor"]
+	path = plugins/front-end-editor
+	url = https://github.com/wp-mirror/front-end-editor.git
