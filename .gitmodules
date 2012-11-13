@@ -21,4 +21,4 @@
 	url = https://github.com/retlehs/roots.git
 [submodule "plugins/front-end-editor"]
 	path = plugins/front-end-editor
-	url = https://github.com/wp-mirror/front-end-editor.git
+	url = https://github.com/wp-mirror/mirror-front-end-editor.git
