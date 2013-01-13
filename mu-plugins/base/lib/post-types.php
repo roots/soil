@@ -26,18 +26,19 @@ function base_register_rotator_post_type() {
   );
 
   $args = array(
-    'labels'             => $labels,
-    'public'             => true,
-    'publicly_queryable' => true,
-    'show_ui'            => true,
-    'show_in_menu'       => true,
-    'query_var'          => true,
-    'rewrite'            => array('slug' => 'rotator'),
-    'capability_type'    => 'post',
-    'has_archive'        => false,
-    'hierarchical'       => false,
-    'menu_position'      => null,
-    'supports'           => array('title', 'thumbnail', 'excerpt')
+    'labels'              => $labels,
+    'public'              => true,
+    'exclude_from_search' => true,
+    'publicly_queryable'  => true,
+    'show_ui'             => true,
+    'show_in_menu'        => true,
+    'query_var'           => true,
+    'rewrite'             => array('slug' => 'rotator'),
+    'capability_type'     => 'post',
+    'has_archive'         => false,
+    'hierarchical'        => false,
+    'menu_position'       => null,
+    'supports'            => array('title', 'thumbnail', 'excerpt')
   );
 
   register_post_type('base_rotator', $args);
