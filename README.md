@@ -6,7 +6,8 @@ There's also a mu-plugin for site specific functionality (custom post types, tax
 
 ## Installation
 
-* [Download](https://github.com/retlehs/soil/downloads) the latest uploaded zip file and extract it inside `wp-content/`
+* Clone the git repo or [download it](https://github.com/retlehs/soil/zipball/master)
+* Run `git submodule update --init --recursive`
 
 ## Must Use Plugins (mu-plugins)
 
