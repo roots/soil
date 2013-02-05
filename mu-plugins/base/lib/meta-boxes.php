@@ -32,18 +32,3 @@ function base_meta_boxes($meta_boxes) {
   return $meta_boxes;
 }
 add_filter('cmb_meta_boxes', 'base_meta_boxes');
-
-/**
- * Initialize meta boxes
- *
- * @link https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress/issues/104#issuecomment-3890997
- */
-function cmb_initialize_meta_boxes() {
-  global $my_box;
-  $meta_boxes = array();
-  $meta_boxes = apply_filters('cmb_meta_boxes', $meta_boxes);
-  foreach ($meta_boxes as $meta_box) {
-    $my_box = new cmb_Meta_Box($meta_box);
-  }
-}
-add_action('init', 'cmb_initialize_meta_boxes');
