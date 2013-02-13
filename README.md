@@ -4,6 +4,8 @@ Soil contains plugins that I use on every new WordPress project (except for [Gra
 
 There's also a mu-plugin for site specific functionality (custom post types, taxonomies, meta boxes, shortcodes, and examples of each are included).
 
+Take a look at [Jump Start Your WordPress Site Development with Soil](http://benword.com/jump-start-your-wordpress-site-development-with-soil/).
+
 ## Installation
 
 * Clone the git repo or [download it](https://github.com/retlehs/soil/zipball/master)
