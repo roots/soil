@@ -8,7 +8,7 @@ Take a look at [Jump Start Your WordPress Site Development with Soil](http://ben
 
 ## Installation
 
-* Clone the git repo or [download it](https://github.com/retlehs/soil/zipball/master)
+* Clone the git repo
 * Run `git submodule update --init --recursive`
 
 ## Must Use Plugins (mu-plugins)
