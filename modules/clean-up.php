@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Clean up wp_head()
  *
