@@ -74,20 +74,6 @@ function soil_language_attributes() {
 add_filter('language_attributes', 'soil_language_attributes');
 
 /**
- * Manage output of wp_title()
- */
-function soil_wp_title($title) {
-  if (is_feed()) {
-    return $title;
-  }
-
-  $title .= get_bloginfo('name');
-
-  return $title;
-}
-add_filter('wp_title', 'soil_wp_title', 10);
-
-/**
  * Clean up output of stylesheet <link> tags
  */
 function soil_clean_style_tag($input) {
