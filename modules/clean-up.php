@@ -67,7 +67,7 @@ function soil_language_attributes() {
   }
 
   $output = implode(' ', $attributes);
-  $output = apply_filters('soil_language_attributes', $output);
+  $output = apply_filters('soil/language_attributes', $output);
 
   return $output;
 }
