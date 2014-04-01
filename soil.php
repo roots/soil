@@ -7,7 +7,6 @@ Version:            3.0.0
 Author:             Roots
 Author URI:         http://roots.io/
 
-
 License:            MIT License
 License URI:        http://opensource.org/licenses/MIT
 */
