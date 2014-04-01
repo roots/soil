@@ -1,30 +1,37 @@
 # Soil
 
-Soil contains plugins that I use on every new WordPress project (except for [Gravity Forms](http://www.rootstheme.com/gravityforms/)) along with [Roots](http://www.rootstheme.com/).
+## Features
 
-There's also a mu-plugin for site specific functionality (custom post types, taxonomies, meta boxes, shortcodes, and examples of each are included).
+### Clean-up
 
-Take a look at [Jump Start Your WordPress Site Development with Soil](http://benword.com/jump-start-your-wordpress-site-development-with-soil/).
+Enable Soil's clean-up with:
 
-## Installation
+```php
+add_theme_support('soil-clean-up');
+```
 
-* Clone the git repo
-* Run `git submodule update --init --recursive`
+* `wp_head()` clean up
+* Remove WP version from RSS feeds
+* Clean up `<html>` attributes
+* Clean up `<link>` tags
+* Clean up `body_class()`
+* Wrap embedded media as suggested by Readability
+* Use `<figure>` and `<figcaption>` for WP captions
+* Remove unnecessary dashboard widgets
+* Remove unnecessary self-closing tags
 
-## Must Use Plugins (mu-plugins)
+### Relative URLs
 
-* [Options Framework Plugin](https://github.com/devinsays/options-framework-plugin)
-* [Custom Metaboxes and Fields](https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress/)
-* [CF Post Formats](https://github.com/crowdfavorite/wp-post-formats)
-* **Base** — Site specific functionality (custom post types, taxonomies, meta boxes, shortcodes)
+Enable Soil's root relative URLs with:
 
-## Plugins
+```php
+add_theme_support('soil-relative-urls');
+```
 
-* [WordPress SEO](http://wordpress.org/extend/plugins/wordpress-seo/)
-* [W3 Total Cache](http://wordpress.org/extend/plugins/w3-total-cache/)
-* [Query Multiple Taxonomies](https://github.com/scribu/wp-query-multiple-taxonomies)
-* [Front-end Editor](https://github.com/scribu/wp-front-end-editor)
+### Nice search
 
-## Themes
+Enable Soil's nice search (`/search/query/`) with:
 
-* [Roots](http://www.rootstheme.com/)
+```php
+add_theme_support('soil-nice-search');
+```
