@@ -5,8 +5,8 @@
  * WordPress likes to use absolute URLs on everything - let's clean that up.
  * Inspired by http://www.456bereastreet.com/archive/201010/how_to_make_wordpress_urls_root_relative/
  *
- * You can enable/disable this feature in config.php:
- * current_theme_supports('root-relative-urls');
+ * You can enable/disable this feature in functions.php (or lib/config.php if you're using Roots):
+ * add_theme_support('soil-relative-urls');
  */
 function soil_root_relative_url($input) {
   preg_match('|https?://([^/]+)(/.*)|i', $input, $matches);
