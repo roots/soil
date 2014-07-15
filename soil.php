@@ -2,7 +2,7 @@
 /*
 Plugin Name:        Soil
 Plugin URI:         http://roots.io/plugins/soil/
-Description:        Clean up WordPress markup, relative URLs, nice search
+Description:        Clean up WordPress markup, relative URLs, nice search & disable trackbacks
 Version:            3.0.0
 Author:             Roots
 Author URI:         http://roots.io/
