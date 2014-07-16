@@ -206,3 +206,12 @@ function soil_request_filter($query_vars) {
   return $query_vars;
 }
 add_filter('request', 'soil_request_filter');
+
+/**
+ * Remove version query string from all styles and scripts
+ */
+function soil_remove_script_version( $src ){
+  return remove_query_arg( 'ver', $src );
+}
+add_filter( 'script_loader_src', 'soil_remove_script_version', 15, 1 );
+add_filter( 'style_loader_src', 'soil_remove_script_version', 15, 1 );
