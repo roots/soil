@@ -35,3 +35,11 @@ Enable Soil's nice search (`/search/query/`) with:
 ```php
 add_theme_support('soil-nice-search');
 ```
+
+### Disable Trackbacks / Pingbacks
+
+Remove trackback / pingback functionality entirely with:
+
+```php
+add_theme_support('soil-disable-trackbacks');
+```
