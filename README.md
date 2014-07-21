@@ -35,3 +35,11 @@ Enable Soil's nice search (`/search/query/`) with:
 ```php
 add_theme_support('soil-nice-search');
 ```
+
+### Disable Asset Versioning
+
+Disable `ver` query string from all styles and scripts with:
+
+```php
+add_theme_support('soil-disable-asset-versioning');
+```

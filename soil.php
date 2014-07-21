@@ -25,5 +25,9 @@ function soil_load_modules() {
   if (current_theme_supports('soil-nice-search')) {
     require_once(SOIL_PATH . 'modules/nice-search.php');
   }
+
+  if (current_theme_supports('soil-disable-asset-versioning')) {
+    require_once(SOIL_PATH . 'modules/disable-asset-versioning.php');
+  }
 }
 add_action('after_setup_theme', 'soil_load_modules');
