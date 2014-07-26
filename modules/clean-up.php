@@ -123,44 +123,6 @@ function soil_embed_wrap($cache, $url, $attr = '', $post_ID = '') {
 add_filter('embed_oembed_html', 'soil_embed_wrap', 10, 4);
 
 /**
- * Use <figure> and <figcaption> for captions
- *
- * @link http://justintadlock.com/archives/2011/07/01/captions-in-wordpress
- */
-function soil_caption($output, $attr, $content) {
-  if (is_feed()) {
-    return $output;
-  }
-
-  $defaults = array(
-    'id'      => '',
-    'align'   => 'alignnone',
-    'width'   => '',
-    'caption' => ''
-  );
-
-  $attr = shortcode_atts($defaults, $attr);
-
-  // If the width is less than 1 or there is no caption, return the content wrapped between the [caption] tags
-  if ($attr['width'] < 1 || empty($attr['caption'])) {
-    return $content;
-  }
-
-  // Set up the attributes for the caption <figure>
-  $attributes  = (!empty($attr['id']) ? ' id="' . esc_attr($attr['id']) . '"' : '' );
-  $attributes .= ' class="wp-caption ' . esc_attr($attr['align']) . '"';
-  $attributes .= ' style="width: ' . esc_attr($attr['width']) . 'px"';
-
-  $output  = '<figure' . $attributes .'>';
-  $output .= do_shortcode($content);
-  $output .= '<figcaption class="caption wp-caption-text">' . $attr['caption'] . '</figcaption>';
-  $output .= '</figure>';
-
-  return $output;
-}
-add_filter('img_caption_shortcode', 'soil_caption', 10, 3);
-
-/**
  * Remove unnecessary dashboard widgets
  *
  * @link http://www.deluxeblogtips.com/2011/01/remove-dashboard-widgets-in-wordpress.html
