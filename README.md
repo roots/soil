@@ -16,7 +16,6 @@ add_theme_support('soil-clean-up');
 * Clean up `<link>` tags
 * Clean up `body_class()`
 * Wrap embedded media as suggested by Readability
-* Use `<figure>` and `<figcaption>` for WP captions
 * Remove unnecessary dashboard widgets
 * Remove unnecessary self-closing tags
 
