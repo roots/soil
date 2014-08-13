@@ -49,12 +49,6 @@ function soil_kill_pingback_url($output, $show) {
   return $output;
 }
 add_filter('bloginfo_url', 'soil_kill_pingback_url', 10, 2);
-
-/**
- * hijack options updating for XMLRPC
- */
-add_filter('pre_update_option_enable_xmlrpc', '__return_false');
-add_filter('pre_option_enable_xmlrpc', '__return_zero');
  
 /**
  * Disable XMLRPC call
