@@ -1,5 +1,25 @@
 # Soil
 
+Clean up WordPress markup, use relative URLs, nicer search URLs, and disable trackbacks
+
+## Installation
+
+If you're using Composer to manage WordPress, add Soil to your project's dependencies. Run:
+
+```sh
+composer require roots/soil 3.0.1
+```
+
+Or manually add it to your `composer.json`:
+
+```json
+"require": {
+  "php": ">=5.3.0",
+  "wordpress": "3.9.2",
+  "roots/soil": "3.0.1"
+}
+```
+
 ## Features
 
 ### Clean-up
@@ -35,10 +55,14 @@ Enable Soil's nice search (`/search/query/`) with:
 add_theme_support('soil-nice-search');
 ```
 
-### Disable Trackbacks / Pingbacks
+### Disable trackbacks/pingbacks
 
-Remove trackback / pingback functionality entirely with:
+Remove trackback/pingback functionality with:
 
 ```php
 add_theme_support('soil-disable-trackbacks');
 ```
+
+## Support
+
+Use the [Roots Discourse](http://discourse.roots.io/) to ask questions and get support.

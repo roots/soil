@@ -1,7 +1,7 @@
 <?php
 /**
- * Disables trackbacks / pingbacks
- * 
+ * Disables trackbacks/pingbacks
+ *
  * You can enable/disable this feature in functions.php (or lib/config.php if you're using Roots):
  * add_theme_support('soil-disable-trackbacks');
  */
@@ -25,7 +25,7 @@ function soil_filter_headers($headers) {
   return $headers;
 }
 add_filter('wp_headers', 'soil_filter_headers', 10, 1);
- 
+
 /**
  * Kill trackback rewrite rule
  */
@@ -38,18 +38,18 @@ function soil_filter_rewrites($rules) {
   return $rules;
 }
 add_filter('rewrite_rules_array', 'soil_filter_rewrites');
- 
+
 /**
  * Kill bloginfo('pingback_url')
  */
 function soil_kill_pingback_url($output, $show) {
-  if ($show == 'pingback_url') {
+  if ($show === 'pingback_url') {
     $output = '';
   }
   return $output;
 }
 add_filter('bloginfo_url', 'soil_kill_pingback_url', 10, 2);
- 
+
 /**
  * Disable XMLRPC call
  */
