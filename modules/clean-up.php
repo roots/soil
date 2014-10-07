@@ -94,9 +94,11 @@ add_filter('style_loader_tag', 'soil_clean_style_tag');
  * Add and remove body_class() classes
  */
 function soil_body_class($classes) {
-  // Add post/page slug
+  // Add post/page slug if not present
   if (is_single() || is_page() && !is_front_page()) {
-    $classes[] = basename(get_permalink());
+    if (!in_array(basename(get_permalink()), $classes)) {
+      $classes[] = basename(get_permalink());
+    }
   }
 
   // Remove unnecessary classes
