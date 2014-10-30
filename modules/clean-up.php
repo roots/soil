@@ -6,7 +6,7 @@
  * Remove inline CSS used by Recent Comments widget
  * Remove inline CSS used by posts with galleries
  * Remove self-closing tag and change ''s to "'s on rel_canonical()
- * 
+ *
  * You can enable/disable this feature in functions.php (or lib/config.php if you're using Roots):
  * add_theme_support('soil-clean-up');
  */
