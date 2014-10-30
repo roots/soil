@@ -60,7 +60,6 @@ add_filter('the_generator', '__return_false');
  */
 function soil_language_attributes() {
   $attributes = array();
-  $output = '';
 
   if (is_rtl()) {
     $attributes[] = 'dir="rtl"';
@@ -117,7 +116,7 @@ add_filter('body_class', 'soil_body_class');
  * @link https://gist.github.com/965956
  * @link http://www.readability.com/publishers/guidelines#publisher
  */
-function soil_embed_wrap($cache, $url, $attr = '', $post_ID = '') {
+function soil_embed_wrap($cache) {
   return '<div class="entry-content-asset">' . $cache . '</div>';
 }
 add_filter('embed_oembed_html', 'soil_embed_wrap', 10, 4);
