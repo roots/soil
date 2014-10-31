@@ -119,7 +119,7 @@ add_filter('body_class', 'soil_body_class');
 function soil_embed_wrap($cache) {
   return '<div class="entry-content-asset">' . $cache . '</div>';
 }
-add_filter('embed_oembed_html', 'soil_embed_wrap', 10, 4);
+add_filter('embed_oembed_html', 'soil_embed_wrap');
 
 /**
  * Remove unnecessary dashboard widgets
