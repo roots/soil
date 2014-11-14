@@ -63,6 +63,14 @@ Remove trackback/pingback functionality with:
 add_theme_support('soil-disable-trackbacks');
 ```
 
+### Disable Asset Versioning
+
+Disable `ver` query string from all styles and scripts with:
+
+```php
+add_theme_support('soil-disable-asset-versioning');
+```
+
 ## Support
 
 Use the [Roots Discourse](http://discourse.roots.io/) to ask questions and get support.
