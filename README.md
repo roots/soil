@@ -7,7 +7,7 @@ Clean up WordPress markup, use relative URLs, nicer search URLs, and disable tra
 If you're using Composer to manage WordPress, add Soil to your project's dependencies. Run:
 
 ```sh
-composer require roots/soil 3.0.1
+composer require roots/soil 3.0.2
 ```
 
 Or manually add it to your `composer.json`:
@@ -16,7 +16,7 @@ Or manually add it to your `composer.json`:
 "require": {
   "php": ">=5.3.0",
   "wordpress": "3.9.2",
-  "roots/soil": "3.0.1"
+  "roots/soil": "3.0.2"
 }
 ```
 
@@ -63,7 +63,7 @@ Remove trackback/pingback functionality with:
 add_theme_support('soil-disable-trackbacks');
 ```
 
-### Disable Asset Versioning
+### Disable asset versioning
 
 Disable `ver` query string from all styles and scripts with:
 

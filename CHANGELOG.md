@@ -1,3 +1,6 @@
+### 3.0.2: November 14th, 2014
+* Add option to remove version query string from all styles and scripts
+
 ### 3.0.1: August 13th, 2014
 * Remove caption changes from clean up now that WordPress supports HTML5 captions
 * Add option to remove trackback/pingback functionality
