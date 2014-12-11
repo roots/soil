@@ -29,5 +29,9 @@ function soil_load_modules() {
   if (current_theme_supports('soil-disable-trackbacks')) {
     require_once(SOIL_PATH . 'modules/disable-trackbacks.php');
   }
+
+  if (current_theme_supports('soil-dns-prefetch-external-assets')) {
+    require_once(SOIL_PATH . 'modules/dns-prefetch-external-assets.php');
+  }
 }
 add_action('after_setup_theme', 'soil_load_modules');
