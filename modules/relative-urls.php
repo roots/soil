@@ -21,7 +21,7 @@ function soil_root_relative_url($input) {
 }
 
 function soil_enable_root_relative_urls() {
-  return !(is_admin() || in_array($GLOBALS['pagenow'], array('wp-login.php', 'wp-register.php')));
+  return !(is_admin() || preg_match('/sitemap(_index)?\.xml/', $_SERVER['REQUEST_URI']) || in_array($GLOBALS['pagenow'], array('wp-login.php', 'wp-register.php')));
 }
 
 if (soil_enable_root_relative_urls()) {
@@ -38,7 +38,7 @@ if (soil_enable_root_relative_urls()) {
     'month_link',
     'day_link',
     'year_link',
-    'tag_link',
+    'term_link',
     'the_author_posts_link',
     'script_loader_src',
     'style_loader_src'
