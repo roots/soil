@@ -168,3 +168,17 @@ function soil_request_filter($query_vars) {
   return $query_vars;
 }
 add_filter('request', 'soil_request_filter');
+
+/**
+ * Make post thumbnail URLs protocol-relative
+ */
+function soil_post_thumbnail_urls($url, $post_id) {
+  // Skip file attachments
+  if (!wp_attachment_is_image($post_id)) {
+    return $url;
+  }
+
+  $url = str_replace('http://', '//', $url);
+  return $url;
+}
+add_filter('wp_get_attachment_url', 'soil_post_thumbnail_urls', 10, 2);

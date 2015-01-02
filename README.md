@@ -38,6 +38,7 @@ add_theme_support('soil-clean-up');
 * Wrap embedded media as suggested by Readability
 * Remove unnecessary dashboard widgets
 * Remove unnecessary self-closing tags
+* Make post thumbnail URLs protocol-relative
 
 ### Relative URLs
 
