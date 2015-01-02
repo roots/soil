@@ -1,3 +1,7 @@
+### HEAD
+* Disable relative URLs on sitemaps
+* Use `term_link` instead of `tag_link` for relative URLs
+
 ### 3.0.2: November 14th, 2014
 * Add option to remove version query string from all styles and scripts
 
