@@ -38,7 +38,7 @@ if (soil_enable_root_relative_urls()) {
     'month_link',
     'day_link',
     'year_link',
-    'tag_link',
+    'term_link',
     'the_author_posts_link',
     'script_loader_src',
     'style_loader_src'
