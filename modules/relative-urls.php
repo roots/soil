@@ -1,4 +1,7 @@
 <?php
+
+namespace Roots\Soil\RelativeURLs;
+
 /**
  * Root relative URLs
  *
@@ -8,7 +11,7 @@
  * You can enable/disable this feature in functions.php (or lib/config.php if you're using Roots):
  * add_theme_support('soil-relative-urls');
  */
-function soil_root_relative_url($input) {
+function root_relative_url($input) {
   preg_match('|https?://([^/]+)(/.*)|i', $input, $matches);
 
   if (!isset($matches[1]) || !isset($matches[2])) {
@@ -20,11 +23,11 @@ function soil_root_relative_url($input) {
   }
 }
 
-function soil_enable_root_relative_urls() {
+function enable_root_relative_urls() {
   return !(is_admin() || preg_match('/sitemap(_index)?\.xml/', $_SERVER['REQUEST_URI']) || in_array($GLOBALS['pagenow'], array('wp-login.php', 'wp-register.php')));
 }
 
-if (soil_enable_root_relative_urls()) {
+if (enable_root_relative_urls()) {
   $root_rel_filters = array(
     'bloginfo_url',
     'the_permalink',
@@ -44,8 +47,9 @@ if (soil_enable_root_relative_urls()) {
     'style_loader_src'
   );
 
-  add_filters($root_rel_filters, 'soil_root_relative_url');
+  add_filters($root_rel_filters, 'Roots\\Soil\\RelativeURLs\\root_relative_url');
 }
+
 function add_filters($tags, $function) {
   foreach($tags as $tag) {
     add_filter($tag, $function);
