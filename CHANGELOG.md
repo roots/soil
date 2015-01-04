@@ -1,4 +1,5 @@
 ### HEAD
+* Add namespace
 * Disable relative URLs on sitemaps
 * Use `term_link` instead of `tag_link` for relative URLs
 

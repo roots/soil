@@ -1,13 +1,16 @@
 <?php
+
+namespace Roots\Soil\NiceSearch;
+
 /**
  * Redirects search results from /?s=query to /search/query/, converts %20 to +
  *
  * @link http://txfx.net/wordpress-plugins/nice-search/
- * 
+ *
  * You can enable/disable this feature in functions.php (or lib/config.php if you're using Roots):
  * add_theme_support('soil-nice-search');
  */
-function soil_nice_search_redirect() {
+function redirect() {
   global $wp_rewrite;
   if (!isset($wp_rewrite) || !is_object($wp_rewrite) || !$wp_rewrite->using_permalinks()) {
     return;
@@ -19,4 +22,4 @@ function soil_nice_search_redirect() {
     exit();
   }
 }
-add_action('template_redirect', 'soil_nice_search_redirect');
+add_action('template_redirect', 'Roots\\Soil\\NiceSearch\\redirect');

@@ -11,9 +11,11 @@ License:            MIT License
 License URI:        http://opensource.org/licenses/MIT
 */
 
+namespace Roots\Soil;
+
 define('SOIL_PATH', plugin_dir_path(__FILE__));
 
-function soil_load_modules() {
+function load_modules() {
   if (current_theme_supports('soil-clean-up')) {
     require_once(SOIL_PATH . 'modules/clean-up.php');
   }
@@ -34,4 +36,4 @@ function soil_load_modules() {
     require_once(SOIL_PATH . 'modules/disable-asset-versioning.php');
   }
 }
-add_action('after_setup_theme', 'soil_load_modules');
+add_action('after_setup_theme', 'Roots\\Soil\\load_modules');
