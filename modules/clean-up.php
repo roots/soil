@@ -96,9 +96,11 @@ add_filter('style_loader_tag', 'Roots\\Soil\\CleanUp\\clean_style_tag');
  * Add and remove body_class() classes
  */
 function body_class($classes) {
-  // Add post/page slug and template slug
+  // Add post/page slug if not present and template slug
   if (is_single() || is_page() && !is_front_page()) {
-    $classes[] = basename(get_permalink());
+    if (!in_array(basename(get_permalink()), $classes)) {
+      $classes[] = basename(get_permalink());
+    }
     $classes[] = str_replace('.php', '', basename(get_page_template()));
   }
 
