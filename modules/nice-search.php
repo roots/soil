@@ -22,4 +22,4 @@ function redirect() {
     exit();
   }
 }
-add_action('template_redirect', 'Roots\\Soil\\NiceSearch\\redirect');
+add_action('template_redirect', __NAMESPACE__ . '\\redirect');

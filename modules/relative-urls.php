@@ -46,7 +46,7 @@ if (enable_root_relative_urls()) {
     'style_loader_src'
   );
 
-  add_filters($root_rel_filters, 'Roots\\Soil\\RelativeURLs\\root_relative_url');
+  add_filters($root_rel_filters, __NAMESPACE__ . '\\root_relative_url');
 }
 
 function add_filters($tags, $function) {

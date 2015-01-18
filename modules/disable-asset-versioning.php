@@ -11,5 +11,5 @@ namespace Roots\Soil\DisableAssetVersioning;
 function remove_script_version($src){
   return remove_query_arg('ver', $src);
 }
-add_filter('script_loader_src', 'Roots\\Soil\\DisableAssetVersioning\\remove_script_version', 15, 1);
-add_filter('style_loader_src', 'Roots\\Soil\\DisableAssetVersioning\\remove_script_version', 15, 1);
+add_filter('script_loader_src', __NAMESPACE__ . '\\remove_script_version', 15, 1);
+add_filter('style_loader_src', __NAMESPACE__ . '\\remove_script_version', 15, 1);

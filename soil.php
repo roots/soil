@@ -36,4 +36,4 @@ function load_modules() {
     require_once(SOIL_PATH . 'modules/disable-asset-versioning.php');
   }
 }
-add_action('after_setup_theme', 'Roots\\Soil\\load_modules');
+add_action('after_setup_theme', __NAMESPACE__ . '\\load_modules');

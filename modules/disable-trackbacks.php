@@ -16,7 +16,7 @@ function filter_xmlrpc_method($methods) {
   unset($methods['pingback.ping']);
   return $methods;
 }
-add_filter('xmlrpc_methods', 'Roots\\Soil\\DisableTrackbacks\\filter_xmlrpc_method', 10, 1);
+add_filter('xmlrpc_methods', __NAMESPACE__ . '\\filter_xmlrpc_method', 10, 1);
 
 /**
  * Remove pingback header
@@ -27,7 +27,7 @@ function filter_headers($headers) {
   }
   return $headers;
 }
-add_filter('wp_headers', 'Roots\\Soil\\DisableTrackbacks\\filter_headers', 10, 1);
+add_filter('wp_headers', __NAMESPACE__ . '\\filter_headers', 10, 1);
 
 /**
  * Kill trackback rewrite rule
@@ -40,7 +40,7 @@ function filter_rewrites($rules) {
   }
   return $rules;
 }
-add_filter('rewrite_rules_array', 'Roots\\Soil\\DisableTrackbacks\\filter_rewrites');
+add_filter('rewrite_rules_array', __NAMESPACE__ . '\\filter_rewrites');
 
 /**
  * Kill bloginfo('pingback_url')
@@ -51,7 +51,7 @@ function kill_pingback_url($output, $show) {
   }
   return $output;
 }
-add_filter('bloginfo_url', 'Roots\\Soil\\DisableTrackbacks\\kill_pingback_url', 10, 2);
+add_filter('bloginfo_url', __NAMESPACE__ . '\\kill_pingback_url', 10, 2);
 
 /**
  * Disable XMLRPC call
@@ -61,4 +61,4 @@ function kill_xmlrpc($action) {
     wp_die('Pingbacks are not supported', 'Not Allowed!', array('response' => 403));
   }
 }
-add_action('xmlrpc_call', 'Roots\\Soil\\DisableTrackbacks\\kill_xmlrpc');
+add_action('xmlrpc_call', __NAMESPACE__ . '\\kill_xmlrpc');

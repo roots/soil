@@ -31,7 +31,7 @@ function head_cleanup() {
 
   if (!class_exists('WPSEO_Frontend')) {
     remove_action('wp_head', 'rel_canonical');
-    add_action('wp_head', 'Roots\\Soil\\CleanUp\\rel_canonical');
+    add_action('wp_head', __NAMESPACE__ . '\\rel_canonical');
   }
 }
 
@@ -49,7 +49,7 @@ function rel_canonical() {
   $link = get_permalink($id);
   echo "\t<link rel=\"canonical\" href=\"$link\">\n";
 }
-add_action('init', 'Roots\\Soil\\CleanUp\\head_cleanup');
+add_action('init', __NAMESPACE__ . '\\head_cleanup');
 
 /**
  * Remove the WordPress version from RSS feeds
@@ -79,7 +79,7 @@ function language_attributes() {
 
   return $output;
 }
-add_filter('language_attributes', 'Roots\\Soil\\CleanUp\\language_attributes');
+add_filter('language_attributes', __NAMESPACE__ . '\\language_attributes');
 
 /**
  * Clean up output of stylesheet <link> tags
@@ -90,7 +90,7 @@ function clean_style_tag($input) {
   $media = $matches[3][0] !== '' && $matches[3][0] !== 'all' ? ' media="' . $matches[3][0] . '"' : '';
   return '<link rel="stylesheet" href="' . $matches[2][0] . '"' . $media . '>' . "\n";
 }
-add_filter('style_loader_tag', 'Roots\\Soil\\CleanUp\\clean_style_tag');
+add_filter('style_loader_tag', __NAMESPACE__ . '\\clean_style_tag');
 
 /**
  * Add and remove body_class() classes
@@ -114,7 +114,7 @@ function body_class($classes) {
 
   return $classes;
 }
-add_filter('body_class', 'Roots\\Soil\\CleanUp\\body_class');
+add_filter('body_class', __NAMESPACE__ . '\\body_class');
 
 /**
  * Wrap embedded media as suggested by Readability
@@ -125,7 +125,7 @@ add_filter('body_class', 'Roots\\Soil\\CleanUp\\body_class');
 function embed_wrap($cache) {
   return '<div class="entry-content-asset">' . $cache . '</div>';
 }
-add_filter('embed_oembed_html', 'Roots\\Soil\\CleanUp\\embed_wrap');
+add_filter('embed_oembed_html', __NAMESPACE__ . '\\embed_wrap');
 
 /**
  * Remove unnecessary dashboard widgets
@@ -138,7 +138,7 @@ function remove_dashboard_widgets() {
   remove_meta_box('dashboard_primary', 'dashboard', 'normal');
   remove_meta_box('dashboard_secondary', 'dashboard', 'normal');
 }
-add_action('admin_init', 'Roots\\Soil\\CleanUp\\remove_dashboard_widgets');
+add_action('admin_init', __NAMESPACE__ . '\\remove_dashboard_widgets');
 
 /**
  * Remove unnecessary self-closing tags
@@ -146,9 +146,9 @@ add_action('admin_init', 'Roots\\Soil\\CleanUp\\remove_dashboard_widgets');
 function remove_self_closing_tags($input) {
   return str_replace(' />', '>', $input);
 }
-add_filter('get_avatar',          'Roots\\Soil\\CleanUp\\remove_self_closing_tags'); // <img />
-add_filter('comment_id_fields',   'Roots\\Soil\\CleanUp\\remove_self_closing_tags'); // <input />
-add_filter('post_thumbnail_html', 'Roots\\Soil\\CleanUp\\remove_self_closing_tags'); // <img />
+add_filter('get_avatar',          __NAMESPACE__ . '\\remove_self_closing_tags'); // <img />
+add_filter('comment_id_fields',   __NAMESPACE__ . '\\remove_self_closing_tags'); // <input />
+add_filter('post_thumbnail_html', __NAMESPACE__ . '\\remove_self_closing_tags'); // <img />
 
 /**
  * Don't return the default description in the RSS feed if it hasn't been changed
@@ -157,7 +157,7 @@ function remove_default_description($bloginfo) {
   $default_tagline = 'Just another WordPress site';
   return ($bloginfo === $default_tagline) ? '' : $bloginfo;
 }
-add_filter('get_bloginfo_rss', 'Roots\\Soil\\CleanUp\\remove_default_description');
+add_filter('get_bloginfo_rss', __NAMESPACE__ . '\\remove_default_description');
 
 /**
  * Fix for empty search queries redirecting to home page
@@ -172,4 +172,4 @@ function request_filter($query_vars) {
 
   return $query_vars;
 }
-add_filter('request', 'Roots\\Soil\\CleanUp\\request_filter');
+add_filter('request', __NAMESPACE__ . '\\request_filter');
