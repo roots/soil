@@ -33,7 +33,6 @@ if (enable_root_relative_urls()) {
     'the_permalink',
     'wp_list_pages',
     'wp_list_categories',
-    'soil_wp_nav_menu_item',
     'the_content_more_link',
     'the_tags',
     'get_pagenum_link',
