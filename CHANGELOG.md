@@ -1,4 +1,5 @@
 ### HEAD
+* Remove fix for empty search queries redirecting to home page
 * Clean up output of `<script>` tags
 * Add namespace
 * Disable relative URLs on sitemaps
