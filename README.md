@@ -7,7 +7,7 @@ Clean up WordPress markup, use relative URLs, nicer search URLs, and disable tra
 If you're using Composer to manage WordPress, add Soil to your project's dependencies. Run:
 
 ```sh
-composer require roots/soil 3.0.2
+composer require roots/soil 3.0.3
 ```
 
 Or manually add it to your `composer.json`:
@@ -16,7 +16,7 @@ Or manually add it to your `composer.json`:
 "require": {
   "php": ">=5.3.0",
   "wordpress": "3.9.2",
-  "roots/soil": "3.0.2"
+  "roots/soil": "3.0.3"
 }
 ```
 
@@ -33,7 +33,7 @@ add_theme_support('soil-clean-up');
 * `wp_head()` clean up
 * Remove WP version from RSS feeds
 * Clean up `<html>` attributes
-* Clean up `<link>` tags
+* Clean up `<link>` and `<script>` tags
 * Clean up `body_class()`
 * Wrap embedded media as suggested by Readability
 * Remove unnecessary dashboard widgets

@@ -1,4 +1,4 @@
-### HEAD
+### 3.0.3: January 24th, 2015
 * Remove fix for empty search queries redirecting to home page
 * Clean up output of `<script>` tags
 * Add namespace
