@@ -12,7 +12,7 @@ namespace Roots\Soil\RelativeURLs;
  * add_theme_support('soil-relative-urls');
  */
 function root_relative_url($input) {
-  preg_match('|https?://([^/]+)(/.*)|i', $input, $matches);
+  preg_match('|(?:https?:)?//([^/]+)(/.*)|i', $input, $matches);
 
   if (!isset($matches[1]) || !isset($matches[2])) {
     return $input;
