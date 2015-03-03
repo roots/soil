@@ -56,6 +56,14 @@ Enable Soil's nice search (`/search/query/`) with:
 add_theme_support('soil-nice-search');
 ```
 
+### JS to Footer
+
+Move all scripts to `wp_footer` action hook with:
+
+```php
+add_theme_support('soil-js-to-footer');
+```
+
 ### Disable trackbacks/pingbacks
 
 Remove trackback/pingback functionality with:
