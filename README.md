@@ -1,5 +1,5 @@
 # Soil
-![Build Status](https://travis-ci.org/roots/soil.svg)](https://travis-ci.org/roots/soil)
+[![Build Status](https://travis-ci.org/roots/soil.svg)](https://travis-ci.org/roots/soil)
 
 Clean up WordPress markup, use relative URLs, nicer search URLs, and disable trackbacks
 
