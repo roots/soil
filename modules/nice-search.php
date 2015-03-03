@@ -23,3 +23,8 @@ function redirect() {
   }
 }
 add_action('template_redirect', __NAMESPACE__ . '\\redirect');
+
+function rewrite($url) {
+  return str_replace('/?s=', '/search/', $url);
+}
+add_filter('wpseo_json_ld_search_url', __NAMESPACE__ . '\\rewrite');
