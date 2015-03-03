@@ -25,7 +25,7 @@ function head_cleanup() {
 
   global $wp_widget_factory;
 
-  if(isset($wp_widget_factory->widgets['WP_Widget_Recent_Comments'])) {
+  if (isset($wp_widget_factory->widgets['WP_Widget_Recent_Comments'])) {
     remove_action('wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style'));
   }
 
@@ -155,8 +155,8 @@ add_action('admin_init', __NAMESPACE__ . '\\remove_dashboard_widgets');
 function remove_self_closing_tags($input) {
   return str_replace(' />', '>', $input);
 }
-add_filter('get_avatar',          __NAMESPACE__ . '\\remove_self_closing_tags'); // <img />
-add_filter('comment_id_fields',   __NAMESPACE__ . '\\remove_self_closing_tags'); // <input />
+add_filter('get_avatar', __NAMESPACE__ . '\\remove_self_closing_tags'); // <img />
+add_filter('comment_id_fields', __NAMESPACE__ . '\\remove_self_closing_tags'); // <input />
 add_filter('post_thumbnail_html', __NAMESPACE__ . '\\remove_self_closing_tags'); // <img />
 
 /**

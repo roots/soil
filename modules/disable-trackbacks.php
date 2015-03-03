@@ -33,7 +33,7 @@ add_filter('wp_headers', __NAMESPACE__ . '\\filter_headers', 10, 1);
  * Kill trackback rewrite rule
  */
 function filter_rewrites($rules) {
-  foreach($rules as $rule => $rewrite) {
+  foreach ($rules as $rule => $rewrite) {
     if (preg_match('/trackback\/\?\$$/i', $rule)) {
       unset($rules[$rule]);
     }
