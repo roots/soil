@@ -5,7 +5,7 @@ namespace Roots\Soil\DisableTrackbacks;
 /**
  * Disables trackbacks/pingbacks
  *
- * You can enable/disable this feature in functions.php (or lib/config.php if you're using Roots):
+ * You can enable/disable this feature in functions.php (or lib/config.php if you're using Sage):
  * add_theme_support('soil-disable-trackbacks');
  */
 

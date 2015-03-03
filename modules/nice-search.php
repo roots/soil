@@ -7,7 +7,7 @@ namespace Roots\Soil\NiceSearch;
  *
  * @link http://txfx.net/wordpress-plugins/nice-search/
  *
- * You can enable/disable this feature in functions.php (or lib/config.php if you're using Roots):
+ * You can enable/disable this feature in functions.php (or lib/config.php if you're using Sage):
  * add_theme_support('soil-nice-search');
  */
 function redirect() {
