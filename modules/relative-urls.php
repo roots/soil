@@ -50,7 +50,7 @@ if (enable_root_relative_urls()) {
 }
 
 function add_filters($tags, $function) {
-  foreach($tags as $tag) {
+  foreach ($tags as $tag) {
     add_filter($tag, $function);
   }
 }
