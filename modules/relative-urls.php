@@ -8,7 +8,7 @@ namespace Roots\Soil\RelativeURLs;
  * WordPress likes to use absolute URLs on everything - let's clean that up.
  * Inspired by http://www.456bereastreet.com/archive/201010/how_to_make_wordpress_urls_root_relative/
  *
- * You can enable/disable this feature in functions.php (or lib/config.php if you're using Roots):
+ * You can enable/disable this feature in functions.php (or lib/config.php if you're using Sage):
  * add_theme_support('soil-relative-urls');
  */
 function root_relative_url($input) {
