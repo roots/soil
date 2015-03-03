@@ -15,7 +15,7 @@ namespace Roots\Soil;
 
 function load_modules() {
   foreach (glob(__DIR__ . '/modules/*.php') as $file) {
-    if (current_theme_supports('soil-' . basename($file))) {
+    if (current_theme_supports('soil-' . basename($file, '.php'))) {
       require_once $file;
     }
   }
