@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name:        Soil
-Plugin URI:         http://roots.io/plugins/soil/
+Plugin URI:         https://roots.io/plugins/soil/
 Description:        Clean up WordPress markup, use relative URLs, nicer search URLs, and disable trackbacks
 Version:            3.0.3
 Author:             Roots
-Author URI:         http://roots.io/
+Author URI:         https://roots.io/
 
 License:            MIT License
 License URI:        http://opensource.org/licenses/MIT

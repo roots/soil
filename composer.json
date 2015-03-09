@@ -3,7 +3,7 @@
   "type": "wordpress-plugin",
   "license": "MIT",
   "description": "Clean up WordPress markup, relative URLs, nice search",
-  "homepage": "http://roots.io/plugins/soil/",
+  "homepage": "https://roots.io/plugins/soil/",
   "authors": [
     {
       "name": "Ben Word",
@@ -21,7 +21,7 @@
   ],
   "support": {
     "issues": "https://github.com/roots/soil/issues",
-    "forum": "http://discourse.roots.io/"
+    "forum": "https://discourse.roots.io/"
   },
   "require": {
     "php": ">=5.3.0",
