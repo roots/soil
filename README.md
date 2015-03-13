@@ -56,6 +56,22 @@ Enable Soil's nice search (`/search/query/`) with:
 add_theme_support('soil-nice-search');
 ```
 
+### Google Analytics
+
+Enable HTML5 Boilerplate's Google Analytics snippet
+
+```php
+add_theme_support('soil-google-analytics');
+define('GOOGLE_ANALYTICS_ID', 'UA-XXXXXX');
+```
+
+By default, the GA snippet will only be shown for non-administrators. Administrators will get a dummy `ga()` function that writes its arguments to the console log for testing and development purposes. If you define `WP_ENV`, then non-production environments will always get dummy `ga()` function. You can override this via the `soil/displayGA` filter.
+
+```php
+add_filter('soil/displayGA', '__return_true'); // Appends H5BP's GA snippet
+add_filter('soil/displayGA', '__return_false'); // Appends a dummy `ga()` function that writes arguments to console log
+```
+
 ### JS to Footer
 
 Move all scripts to `wp_footer` action hook with:
