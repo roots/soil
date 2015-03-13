@@ -8,7 +8,7 @@ Clean up WordPress markup, use relative URLs, nicer search URLs, and disable tra
 If you're using Composer to manage WordPress, add Soil to your project's dependencies. Run:
 
 ```sh
-composer require roots/soil 3.0.3
+composer require roots/soil 3.1.0
 ```
 
 Or manually add it to your `composer.json`:
@@ -16,8 +16,8 @@ Or manually add it to your `composer.json`:
 ```json
 "require": {
   "php": ">=5.3.0",
-  "wordpress": "3.9.2",
-  "roots/soil": "3.0.3"
+  "wordpress": "4.1.1",
+  "roots/soil": "3.1.0"
 }
 ```
 

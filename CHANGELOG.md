@@ -1,4 +1,5 @@
-### HEAD
+### 3.1.0: March 13th, 2015
+* Add module for HTML5 Boilerplate's Google Analytics snippet ([#56](https://github.com/roots/soil/pull/56))
 * Add module for moving all JS to footer ([#51](https://github.com/roots/soil/pull/51))
 * Add nice search support to WordPress SEO ([#48](https://github.com/roots/soil/pull/48))
 * Add check for protocol relative URLs to root relative URLs ([#49](https://github.com/roots/soil/pull/49))
