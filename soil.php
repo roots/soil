@@ -14,8 +14,11 @@ License URI:        http://opensource.org/licenses/MIT
 namespace Roots\Soil;
 
 function load_modules() {
+  global $_wp_theme_features;
   foreach (glob(__DIR__ . '/modules/*.php') as $file) {
-    if (current_theme_supports('soil-' . basename($file, '.php'))) {
+    $feature = 'soil-' . basename($file, '.php');
+    if (isset($_wp_theme_features[$feature])) {
+      $options = (array) $_wp_theme_features[$feature];
       require_once $file;
     }
   }
