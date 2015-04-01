@@ -35,7 +35,7 @@ class Options {
     if (isset(self::$modules[$module])) {
       return self::$modules[$module]->options;
     }
-    if (substr($module, 0, 5)!=='soil-') {
+    if (substr($module, 0, 5) !== 'soil-') {
       return self::get('soil-' . $module);
     }
     return [];
