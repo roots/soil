@@ -61,15 +61,24 @@ add_theme_support('soil-nice-search');
 Enable HTML5 Boilerplate's Google Analytics snippet
 
 ```php
-add_theme_support('soil-google-analytics');
-define('GOOGLE_ANALYTICS_ID', 'UA-XXXXXX');
+add_theme_support('soil-google-analytics', 'UA-XXXXX-Y');
 ```
 
-By default, the GA snippet will only be shown for non-administrators. Administrators will get a dummy `ga()` function that writes its arguments to the console log for testing and development purposes. If you define `WP_ENV`, then non-production environments will always get dummy `ga()` function. You can override this via the `soil/displayGA` filter.
+By default, the script will be loaded from the `wp_footer` hook, but you can specify any other action hook as the third parameter.
 
 ```php
-add_filter('soil/displayGA', '__return_true'); // Appends H5BP's GA snippet
-add_filter('soil/displayGA', '__return_false'); // Appends a dummy `ga()` function that writes arguments to console log
+add_theme_support('soil-google-analytics', 'UA-XXXXX-Y', 'wp_head'); // script will load during wp_head
+```
+
+#### Dummy `ga()` Function
+
+This module will load a dummy `ga()` function for non-administrators as well as in non-`production` environments (when `WP_ENV` is defined). The function takes all arguments passed to it and logs them to the JavaScript console.
+
+You can override whether the dummy function is displayed via the `soil/dummyGA` filter.
+
+```php
+add_filter('soil/dummyGA', '__return_true');  // Appends a dummy `ga()` function
+add_filter('soil/dummyGA', '__return_false'); // Appends H5BP's GA snippet
 ```
 
 ### JS to Footer
