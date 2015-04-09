@@ -1,3 +1,6 @@
+### HEAD
+* Add note about activating the plugin ([#62](https://github.com/roots/soil/issues/62))
+
 ### 3.1.0: March 13th, 2015
 * Add module for HTML5 Boilerplate's Google Analytics snippet ([#56](https://github.com/roots/soil/pull/56))
 * Add module for moving all JS to footer ([#51](https://github.com/roots/soil/pull/51))
