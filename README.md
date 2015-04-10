@@ -21,6 +21,12 @@ Or manually add it to your `composer.json`:
 }
 ```
 
+Once this is complete, activate Soil in your WordPress admin or via [wp-cli](http://wp-cli.org/commands/plugin/activate/):
+
+```bash
+wp plugin activate soil
+```
+
 ## Features
 
 ### Clean-up
