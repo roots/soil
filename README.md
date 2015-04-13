@@ -8,7 +8,7 @@ A collection of modules to apply theme-agnostic front-end modifications to WordP
 If you're using Composer to manage WordPress, add Soil to your project's dependencies. Run:
 
 ```sh
-composer require roots/soil 3.1.0
+composer require roots/soil 3.2.0
 ```
 
 Or manually add it to your `composer.json`:
@@ -17,7 +17,7 @@ Or manually add it to your `composer.json`:
 "require": {
   "php": ">=5.3.0",
   "wordpress": "4.1.1",
-  "roots/soil": "3.1.0"
+  "roots/soil": "3.2.0"
 }
 ```
 
