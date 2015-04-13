@@ -1,7 +1,7 @@
 # Soil
 [![Build Status](https://travis-ci.org/roots/soil.svg)](https://travis-ci.org/roots/soil)
 
-Clean up WordPress markup, use relative URLs, nicer search URLs, and disable trackbacks
+A collection of modules to apply theme-agnostic front-end modifications to WordPress.
 
 ## Installation
 
@@ -27,89 +27,28 @@ Once this is complete, activate Soil in your WordPress admin or via [wp-cli](htt
 wp plugin activate soil
 ```
 
-## Features
+## Modules
 
-### Clean-up
+* **Load jQuery from the Google CDN**<br>
+  `add_theme_support('soil-jquery-cdn');`
 
-Enable Soil's clean-up with:
+* **Cleaner WordPress markup**<br>
+  `add_theme_support('soil-clean-up');`
 
-```php
-add_theme_support('soil-clean-up');
-```
+* **Root relative URLs**<br>
+  `add_theme_support('soil-relative-urls');`
 
-* `wp_head()` clean up
-* Remove WP version from RSS feeds
-* Clean up `<html>` attributes
-* Clean up `<link>` and `<script>` tags
-* Clean up `body_class()`
-* Wrap embedded media as suggested by Readability
-* Remove unnecessary dashboard widgets
-* Remove unnecessary self-closing tags
+* **Google Analytics** ([more info](https://github.com/roots/soil/wiki/Google-Analytics))<br>
+  `add_theme_support('soil-google-analytics', 'UA-XXXXX-Y');`
 
-### Relative URLs
+* **Move all JS to the footer**<br>
+  `add_theme_support('soil-js-to-footer');`
 
-Enable Soil's root relative URLs with:
+* **Disable trackbacks**<br>
+  `add_theme_support('soil-disable-trackbacks');`
 
-```php
-add_theme_support('soil-relative-urls');
-```
-
-### Nice search
-
-Enable Soil's nice search (`/search/query/`) with:
-
-```php
-add_theme_support('soil-nice-search');
-```
-
-### Google Analytics
-
-Enable HTML5 Boilerplate's Google Analytics snippet
-
-```php
-add_theme_support('soil-google-analytics', 'UA-XXXXX-Y');
-```
-
-By default, the script will be loaded from the `wp_footer` hook, but you can specify any other action hook as the third parameter.
-
-```php
-add_theme_support('soil-google-analytics', 'UA-XXXXX-Y', 'wp_head'); // script will load during wp_head
-```
-
-#### Dummy `ga()` Function
-
-This module will load a dummy `ga()` function for non-administrators as well as in non-`production` environments (when `WP_ENV` is defined). The function takes all arguments passed to it and logs them to the JavaScript console.
-
-You can override whether the dummy function is displayed via the `soil/dummyGA` filter.
-
-```php
-add_filter('soil/dummyGA', '__return_true');  // Appends a dummy `ga()` function
-add_filter('soil/dummyGA', '__return_false'); // Appends H5BP's GA snippet
-```
-
-### JS to Footer
-
-Move all scripts to `wp_footer` action hook with:
-
-```php
-add_theme_support('soil-js-to-footer');
-```
-
-### Disable trackbacks/pingbacks
-
-Remove trackback/pingback functionality with:
-
-```php
-add_theme_support('soil-disable-trackbacks');
-```
-
-### Disable asset versioning
-
-Disable `ver` query string from all styles and scripts with:
-
-```php
-add_theme_support('soil-disable-asset-versioning');
-```
+* **Disable asset versioning**<br>
+  `add_theme_support('soil-disable-asset-versioning');`
 
 ## Support
 

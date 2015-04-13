@@ -2,7 +2,7 @@
 /*
 Plugin Name:        Soil
 Plugin URI:         https://roots.io/plugins/soil/
-Description:        Clean up WordPress markup, use relative URLs, nicer search URLs, and disable trackbacks
+Description:        A collection of modules to apply theme-agnostic front-end modifications to WordPress.
 Version:            3.1.0
 Author:             Roots
 Author URI:         https://roots.io/
@@ -16,21 +16,21 @@ namespace Roots\Soil;
 class Options {
   protected static $modules = [];
   protected $options = [];
-  
+
   public static function init($module, $options = []) {
     if (!isset(self::$modules[$module])) {
       self::$modules[$module] = new static((array) $options);
     }
     return self::$modules[$module];
   }
-  
+
   public static function getByFile($file) {
     if (file_exists($file) || file_exists(__DIR__ . '/modules/' . $file)) {
       return self::get('soil-' . basename($file, '.php'));
     }
     return [];
   }
-  
+
   public static function get($module) {
     if (isset(self::$modules[$module])) {
       return self::$modules[$module]->options;
@@ -40,11 +40,11 @@ class Options {
     }
     return [];
   }
-  
+
   protected function __construct($options) {
     $this->set($options);
   }
-  
+
   public function set($options) {
     $this->options = $options;
   }
