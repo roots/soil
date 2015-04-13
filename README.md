@@ -1,7 +1,7 @@
 # Soil
 [![Build Status](https://travis-ci.org/roots/soil.svg)](https://travis-ci.org/roots/soil)
 
-A collection of modules to apply theme-agnostic front-end modifications to WordPress.
+A WordPress plugin which contains a collection of modules to apply theme-agnostic front-end modifications.
 
 ## Installation
 
