@@ -5,27 +5,28 @@ A collection of modules to apply theme-agnostic front-end modifications to WordP
 
 ## Installation
 
-If you're using Composer to manage WordPress, add Soil to your project's dependencies. Run:
+You can install this plugin via the command-line or the WordPress admin panel.
+
+### via Command-line
+
+If you're [using Composer to manage WordPress](https://roots.io/using-composer-with-wordpress/), add Soil to your project's dependencies.
 
 ```sh
 composer require roots/soil 3.2.0
 ```
 
-Or manually add it to your `composer.json`:
+Then activate the plugin via [wp-cli](http://wp-cli.org/commands/plugin/activate/).
 
-```json
-"require": {
-  "php": ">=5.3.0",
-  "wordpress": "4.1.1",
-  "roots/soil": "3.2.0"
-}
-```
-
-Once this is complete, activate Soil in your WordPress admin or via [wp-cli](http://wp-cli.org/commands/plugin/activate/):
-
-```bash
+```sh
 wp plugin activate soil
 ```
+
+### via WordPress Admin Panel
+
+1. Download the [latest zip](https://github.com/roots/soil/archive/master.zip) of this repo.
+2. In your WordPress admin panel, navigate to Plugins->Add New
+3. Click Upload Plugin
+4. Upload the zip file that you downloaded.
 
 ## Modules
 
