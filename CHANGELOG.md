@@ -1,4 +1,4 @@
-### HEAD
+### 3.2.0: April 12th, 2015
 * Add module for loading jQuery from Google's CDN with a local fallback ([#64](https://github.com/roots/soil/issues/64))
 * Add note about activating the plugin ([#62](https://github.com/roots/soil/issues/62))
 
