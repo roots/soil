@@ -3,6 +3,12 @@
 
 A WordPress plugin which contains a collection of modules to apply theme-agnostic front-end modifications.
 
+## Requirements
+
+| Prerequisite    | How to check | How to install
+| --------------- | ------------ | ------------- |
+| PHP >= 5.4.x    | `php -v`     | [php.net](http://php.net/manual/en/install.php) |
+
 ## Installation
 
 You can install this plugin via the command-line or the WordPress admin panel.
