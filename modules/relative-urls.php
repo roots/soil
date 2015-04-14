@@ -24,11 +24,11 @@ function root_relative_url($input) {
 }
 
 function enable_root_relative_urls() {
-  return !(is_admin() || preg_match('/sitemap(_index)?\.xml/', $_SERVER['REQUEST_URI']) || in_array($GLOBALS['pagenow'], array('wp-login.php', 'wp-register.php')));
+  return !(is_admin() || preg_match('/sitemap(_index)?\.xml/', $_SERVER['REQUEST_URI']) || in_array($GLOBALS['pagenow'], ['wp-login.php', 'wp-register.php']));
 }
 
 if (enable_root_relative_urls()) {
-  $root_rel_filters = array(
+  $root_rel_filters = [
     'bloginfo_url',
     'the_permalink',
     'wp_list_pages',
@@ -45,7 +45,7 @@ if (enable_root_relative_urls()) {
     'the_author_posts_link',
     'script_loader_src',
     'style_loader_src'
-  );
+  ];
 
   add_filters($root_rel_filters, __NAMESPACE__ . '\\root_relative_url');
 }

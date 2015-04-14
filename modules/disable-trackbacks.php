@@ -58,7 +58,7 @@ add_filter('bloginfo_url', __NAMESPACE__ . '\\kill_pingback_url', 10, 2);
  */
 function kill_xmlrpc($action) {
   if ($action === 'pingback.ping') {
-    wp_die('Pingbacks are not supported', 'Not Allowed!', array('response' => 403));
+    wp_die('Pingbacks are not supported', 'Not Allowed!', ['response' => 403]);
   }
 }
 add_action('xmlrpc_call', __NAMESPACE__ . '\\kill_xmlrpc');
