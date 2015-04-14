@@ -11,18 +11,6 @@ namespace Roots\Soil\RelativeURLs;
  * You can enable/disable this feature in functions.php (or lib/config.php if you're using Sage):
  * add_theme_support('soil-relative-urls');
  */
-function root_relative_url($input) {
-  preg_match('|(?:https?:)?//([^/]+)(/.*)|i', $input, $matches);
-
-  if (!isset($matches[1]) || !isset($matches[2])) {
-    return $input;
-  } elseif (($matches[1] === $_SERVER['SERVER_NAME']) || $matches[1] === $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT']) {
-    return wp_make_link_relative($input);
-  } else {
-    return $input;
-  }
-}
-
 function enable_root_relative_urls() {
   return !(is_admin() || preg_match('/sitemap(_index)?\.xml/', $_SERVER['REQUEST_URI']) || in_array($GLOBALS['pagenow'], ['wp-login.php', 'wp-register.php']));
 }
@@ -47,7 +35,7 @@ if (enable_root_relative_urls()) {
     'style_loader_src'
   ];
 
-  add_filters($root_rel_filters, __NAMESPACE__ . '\\root_relative_url');
+  add_filters($root_rel_filters, 'Roots\\Soil\\Utils\\root_relative_url');
 }
 
 function add_filters($tags, $function) {
