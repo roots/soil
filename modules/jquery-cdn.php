@@ -25,7 +25,7 @@ function register_jquery() {
     add_filter('script_loader_src', __NAMESPACE__ . '\\jquery_local_fallback', 10, 2);
   }
 }
-add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\register_jquery');
+add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\register_jquery', 100);
 
 /**
  * Output the local fallback immediately after jQuery's <script>
