@@ -26,7 +26,7 @@ function head_cleanup() {
   global $wp_widget_factory;
 
   if (isset($wp_widget_factory->widgets['WP_Widget_Recent_Comments'])) {
-    remove_action('wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style'));
+    remove_action('wp_head', [$wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style']);
   }
 
   if (!class_exists('WPSEO_Frontend')) {
@@ -62,7 +62,7 @@ add_filter('the_generator', '__return_false');
  * Remove dir="ltr"
  */
 function language_attributes() {
-  $attributes = array();
+  $attributes = [];
 
   if (is_rtl()) {
     $attributes[] = 'dir="rtl"';
@@ -115,10 +115,10 @@ function body_class($classes) {
 
   // Remove unnecessary classes
   $home_id_class = 'page-id-' . get_option('page_on_front');
-  $remove_classes = array(
+  $remove_classes = [
     'page-template-default',
     $home_id_class
-  );
+  ];
   $classes = array_diff($classes, $remove_classes);
 
   return $classes;
