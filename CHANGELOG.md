@@ -1,3 +1,7 @@
+### HEAD
+* Add module for a cleaner navigation walker ([#73](https://github.com/roots/soil/issues/72))
+* Use short array syntax ([#72](https://github.com/roots/soil/issues/72))
+
 ### 3.2.0: April 12th, 2015
 * Add module for loading jQuery from Google's CDN with a local fallback ([#64](https://github.com/roots/soil/issues/64))
 * Add note about activating the plugin ([#62](https://github.com/roots/soil/issues/62))

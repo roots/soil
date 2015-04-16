@@ -42,6 +42,9 @@ wp plugin activate soil
 * **Cleaner WordPress markup**<br>
   `add_theme_support('soil-clean-up');`
 
+* **Cleaner walker for navigation menus**<br>
+  `add_theme_support('soil-nav-walker');`
+
 * **Root relative URLs**<br>
   `add_theme_support('soil-relative-urls');`
 
