@@ -2,6 +2,8 @@
 
 namespace Roots\Soil\RelativeURLs;
 
+use Roots\Soil\Utils;
+
 /**
  * Root relative URLs
  *
@@ -35,11 +37,5 @@ if (enable_root_relative_urls()) {
     'style_loader_src'
   ];
 
-  add_filters($root_rel_filters, 'Roots\\Soil\\Utils\\root_relative_url');
-}
-
-function add_filters($tags, $function) {
-  foreach ($tags as $tag) {
-    add_filter($tag, $function);
-  }
+  Utils\add_filters($root_rel_filters, 'Roots\\Soil\\Utils\\root_relative_url');
 }
