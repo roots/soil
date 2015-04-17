@@ -15,8 +15,12 @@ namespace Roots\Soil\CleanUp;
  */
 function head_cleanup() {
   // Originally from http://wpengineer.com/1438/wordpress-header/
-  remove_action('wp_head', 'feed_links', 2);
   remove_action('wp_head', 'feed_links_extra', 3);
+  add_action('wp_head', 'ob_start', 1, 0);
+  add_action('wp_head', function () {
+    $pattern = '/.*' . preg_quote(esc_url(get_feed_link('comments_' . get_default_feed())), '/') . '.*[\r\n]+/';
+    echo preg_replace($pattern, '', ob_get_clean());
+  }, 3, 0);
   remove_action('wp_head', 'rsd_link');
   remove_action('wp_head', 'wlwmanifest_link');
   remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
