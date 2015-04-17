@@ -35,7 +35,7 @@ class NavWalker extends \Walker_Nav_Menu {
   }
 
   // @codingStandardsIgnoreStart
-  function display_element($element, &$children_elements, $max_depth, $depth = 0, $args, &$output) {
+  public function display_element($element, &$children_elements, $max_depth, $depth = 0, $args, &$output) {
     $element->is_subitem = ((!empty($children_elements[$element->ID]) && (($depth + 1) < $max_depth || ($max_depth === 0))));
 
     if ($element->is_subitem) {
@@ -93,7 +93,7 @@ function nav_menu_args($args = '') {
   }
 
   if (!$args['walker']) {
-    $nav_menu_args['walker'] = new \Roots\Soil\Nav\NavWalker();
+    $nav_menu_args['walker'] = new NavWalker();
   }
 
   return array_merge($args, $nav_menu_args);
