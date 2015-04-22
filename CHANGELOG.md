@@ -1,6 +1,11 @@
-### HEAD
-* Add module for a cleaner navigation walker ([#73](https://github.com/roots/soil/issues/72))
+### 3.3.0: April 22nd, 2015
+* Escape `remove_query_arg` ([#79](https://github.com/roots/soil/issues/79))
+* Remove comments feed ([#78](https://github.com/roots/soil/issues/78))
+* Specify HTTPS protocol ([#77](https://github.com/roots/soil/issues/77))
+* Add more utils, clean up utils ([#76](https://github.com/roots/soil/issues/76))
+* Add module for a cleaner navigation walker ([#73](https://github.com/roots/soil/issues/73))
 * Use short array syntax ([#72](https://github.com/roots/soil/issues/72))
+* Use Google's / @mathiasbynens's GA snippet ([#61](https://github.com/roots/soil/issues/61))
 
 ### 3.2.0: April 12th, 2015
 * Add module for loading jQuery from Google's CDN with a local fallback ([#64](https://github.com/roots/soil/issues/64))
