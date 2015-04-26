@@ -5,9 +5,24 @@ A WordPress plugin which contains a collection of modules to apply theme-agnosti
 
 ## Requirements
 
-| Prerequisite    | How to check | How to install
-| --------------- | ------------ | ------------- |
-| PHP >= 5.4.x    | `php -v`     | [php.net](http://php.net/manual/en/install.php) |
+<table>
+  <thead>
+    <tr>
+      <th>Prerequisite</th>
+      <th>How to check</th>
+      <th>How to install</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>PHP &gt;= 5.4.x</td>
+      <td><code>php -v</code></td>
+      <td>
+        <a href="http://php.net/manual/en/install.php">php.net</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 ## Installation
 
