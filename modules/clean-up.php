@@ -34,6 +34,7 @@ function head_cleanup() {
   remove_filter('the_content_feed', 'wp_staticize_emoji');
   remove_filter('comment_text_rss', 'wp_staticize_emoji');
   remove_filter('wp_mail', 'wp_staticize_emoji_for_email');
+  add_filter('use_default_gallery_style', '__return_false');
 
   global $wp_widget_factory;
 
