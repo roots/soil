@@ -1,3 +1,7 @@
+### 3.4.0: April 29th, 2015
+* Remove inline CSS used by posts with galleries ([#85](https://github.com/roots/soil/issues/85))
+* Remove inline CSS and JS from WP emoji support ([#84](https://github.com/roots/soil/issues/84))
+
 ### 3.3.0: April 22nd, 2015
 * Escape `remove_query_arg` ([#79](https://github.com/roots/soil/issues/79))
 * Remove comments feed ([#78](https://github.com/roots/soil/issues/78))
