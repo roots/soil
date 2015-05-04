@@ -1,5 +1,5 @@
 # Soil
-[![Build Status](https://travis-ci.org/roots/soil.svg)](https://travis-ci.org/roots/soil)
+[![Build Status](https://travis-ci.org/roots/soil.svg)](https://travis-ci.org/roots/soil) [![HHVM Status](https://img.shields.io/hhvm/roots/soil.svg)](https://travis-ci.org/roots/soil) [![Latest Stable Version](https://poser.pugx.org/roots/soil/v/stable.svg)](https://packagist.org/packages/roots/soil) [![License](https://poser.pugx.org/roots/soil/license.svg)](https://packagist.org/packages/roots/soil) [![Total Downloads](https://poser.pugx.org/roots/soil/downloads)](https://packagist.org/packages/roots/soil)
 
 A WordPress plugin which contains a collection of modules to apply theme-agnostic front-end modifications.
 
