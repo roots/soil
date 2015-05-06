@@ -2,7 +2,7 @@
   "name": "roots/soil",
   "type": "wordpress-plugin",
   "license": "MIT",
-  "description": "Clean up WordPress markup, relative URLs, nice search",
+  "description": "A WordPress plugin which contains a collection of modules to apply theme-agnostic front-end modifications",
   "homepage": "https://roots.io/plugins/soil/",
   "authors": [
     {
