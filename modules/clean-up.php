@@ -118,12 +118,11 @@ add_filter('script_loader_tag', __NAMESPACE__ . '\\clean_script_tag');
  * Add and remove body_class() classes
  */
 function body_class($classes) {
-  // Add post/page slug if not present and template slug
+  // Add post/page slug if not present
   if (is_single() || is_page() && !is_front_page()) {
     if (!in_array(basename(get_permalink()), $classes)) {
       $classes[] = basename(get_permalink());
     }
-    $classes[] = str_replace('.php', '', basename(get_page_template()));
   }
 
   // Remove unnecessary classes
