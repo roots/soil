@@ -10,7 +10,10 @@ function root_relative_url($input) {
   if (!isset($matches[1]) || !isset($matches[2])) {
     return $input;
   }
-  if (($matches[1] === $_SERVER['SERVER_NAME']) || $matches[1] === $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT']) {
+  if (is_multisite()) {
+    preg_match('|https?://([^/]+)/.*|i', network_site_url(), $network_matches);
+  }
+  if (($matches[1] === $_SERVER['SERVER_NAME']) || $matches[1] === $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] || (is_multisite() && isset($network_matches[1]) && $matches[1] === $network_matches[1])) {
     return wp_make_link_relative($input);
   }
   return $input;
