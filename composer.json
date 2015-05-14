@@ -26,5 +26,8 @@
   "require": {
     "php": ">=5.4.0",
     "composer/installers": "~1.0"
+  },
+  "require-dev": {
+    "phpspec/phpspec": "~2.2"
   }
 }
