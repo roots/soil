@@ -24,6 +24,7 @@ class JqueryCDNTest extends WP_UnitTestCase {
   {
     JqueryCDN\register_jquery();
     wp_enqueue_script('jquery');
+
     ob_start();
     do_action('wp_footer');
     $footer = ob_get_flush();
