@@ -17,7 +17,7 @@ class JqueryCDNTest extends WP_UnitTestCase {
     $GLOBALS['wp_scripts']->registered['jquery']->ver = $this->jquery_version;
   }
 
-  public function test_register_jquery_cdn()
+  public function testRegisterJqueryCDN()
   {
     JqueryCDN\register_jquery();
     wp_enqueue_script('jquery');
@@ -31,5 +31,18 @@ class JqueryCDNTest extends WP_UnitTestCase {
     );
   }
 
+  public function testJqueryFallback()
+  {
+    $jquery_src = includes_url('/js/jquery/jquery.js');
+    JqueryCDN\jquery_local_fallback($jquery_src, 'jquery');
 
+    ob_start();
+    JqueryCDN\jquery_local_fallback($jquery_src);
+    $output = ob_get_flush();
+
+    $this->assertEquals(
+      '<script>window.jQuery || document.write(\'<script src="' . $jquery_src .'"><\/script>\')</script>',
+      trim($output)
+    );
+  }
 }
