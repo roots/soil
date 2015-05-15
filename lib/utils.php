@@ -6,11 +6,14 @@ namespace Roots\Soil\Utils;
  * Make a URL relative
  */
 function root_relative_url($input) {
-  preg_match('|(?:https?:)?//([^/]+)(/.*)|i', $input, $matches);
-  if (!isset($matches[1]) || !isset($matches[2])) {
+  $url = parse_url($input);
+  if (!isset($url['host']) || !isset($url['path'])) {
     return $input;
   }
-  if (($matches[1] === $_SERVER['SERVER_NAME']) || $matches[1] === $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT']) {
+  if (is_multisite()) {
+    $network_url = parse_url(network_site_url(), PHP_URL_HOST);
+  }
+  if (($url['host'] === $_SERVER['SERVER_NAME']) || $url['host'] === $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] || (isset($network_url) && $url['host'] === $network_url)) {
     return wp_make_link_relative($input);
   }
   return $input;
