@@ -1,7 +1,11 @@
 <?php
 
+namespace Roots\Soil\Tests;
+
 require_once dirname(__DIR__) . "/modules/jquery-cdn.php";
 
+use WP_UnitTestCase;
+use stdClass;
 use Roots\Soil\JqueryCDN;
 
 class JqueryCDNTest extends WP_UnitTestCase {
@@ -10,7 +14,6 @@ class JqueryCDNTest extends WP_UnitTestCase {
 
   public function setUp()
   {
-
     $GLOBALS['wp_scripts'] = new stdClass();
     $GLOBALS['wp_scripts']->registered = [];
     $GLOBALS['wp_scripts']->registered['jquery'] = new stdClass();
