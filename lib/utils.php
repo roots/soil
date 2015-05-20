@@ -10,10 +10,17 @@ function root_relative_url($input) {
   if (!isset($url['host']) || !isset($url['path'])) {
     return $input;
   }
-  if (is_multisite()) {
-    $network_url = parse_url(network_site_url(), PHP_URL_HOST);
+  $site_url = parse_url(network_site_url());  // falls back to site_url
+
+  if (!isset($url['scheme'])) {
+    $url['scheme'] = $site_url['scheme'];
   }
-  if (($url['host'] === $_SERVER['SERVER_NAME']) || $url['host'] === $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] || (isset($network_url) && $url['host'] === $network_url)) {
+  $hosts_match = $site_url['host'] === $url['host'];
+  $schemes_match = $site_url['scheme'] === $url['scheme'];
+  $ports_exist = isset($site_url['port']) && isset($url['port']);
+  $ports_match = ($ports_exist) ? $site_url['port'] === $url['port'] : true;
+
+  if ($hosts_match && $schemes_match && $ports_match) {
     return wp_make_link_relative($input);
   }
   return $input;
