@@ -2,37 +2,28 @@
 
 namespace Roots\Soil\Tests;
 
-require_once dirname(__DIR__) . "/modules/jquery-cdn.php";
-
-use WP_UnitTestCase;
+use PHPUnit_Framework_TestCase;
 use stdClass;
+use Mockery;
+use Brain\Monkey;
+use Brain\Monkey\Functions;
 use Roots\Soil\JqueryCDN;
 
-class JqueryCDNTest extends WP_UnitTestCase {
+class JqueryCDNTest extends TestCase {
 
   private $jquery_version = "1.11.2";
 
   public function setUp()
   {
+    parent::setUp();
+    Functions::when('includes_url')->justReturn('http://example.com/wp/wp-includes');
+
     $GLOBALS['wp_scripts'] = new stdClass();
     $GLOBALS['wp_scripts']->registered = [];
     $GLOBALS['wp_scripts']->registered['jquery'] = new stdClass();
     $GLOBALS['wp_scripts']->registered['jquery']->ver = $this->jquery_version;
-  }
 
-  public function testRegisterJqueryCDN()
-  {
-    JqueryCDN\register_jquery();
-    wp_enqueue_script('jquery');
-
-    ob_start();
-    do_action('wp_footer');
-    $footer = ob_get_flush();
-
-    $this->assertEquals(
-      "<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/{$this->jquery_version}/jquery.min.js'></script>",
-      trim($footer)
-    );
+    require_once dirname(__DIR__) . "/modules/jquery-cdn.php";
   }
 
   public function testJqueryFallback()
