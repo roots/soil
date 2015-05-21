@@ -2,7 +2,6 @@
 
 namespace Roots\Soil\Tests;
 
-use PHPUnit_Framework_TestCase;
 use stdClass;
 use Mockery;
 use Brain\Monkey;
