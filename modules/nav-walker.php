@@ -74,7 +74,10 @@ class NavWalker extends \Walker_Nav_Menu {
 
     $classes = array_unique($classes);
 
-    return array_filter($classes, 'Roots\\Soil\\Utils\\is_element_empty');
+    return array_filter($classes, function ($element) {
+      $element = trim($element);
+      return !empty($element);
+    });
   }
 }
 

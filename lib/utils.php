@@ -26,14 +26,6 @@ function url_compare($url, $rel) {
 }
 
 /**
- * Check if element is empty
- */
-function is_element_empty($element) {
-  $element = trim($element);
-  return !empty($element);
-}
-
-/**
  * Hooks a single callback to multiple tags
  */
 function add_filters($tags, $function, $priority = 10, $accepted_args = 1) {
