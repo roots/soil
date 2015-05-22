@@ -31,30 +31,30 @@ class UtilTest extends TestCase {
   {
     Utils\add_filters(
       ['filter_this', 'filter_that'],
-      [$this, 'callback_test']
+      [$this, 'callbackTest']
     );
-    $this->assertTrue(has_filter('filter_this', [$this, 'callback_test']));
-    $this->assertTrue(has_filter('filter_that', [$this, 'callback_test']));
+    $this->assertTrue(has_filter('filter_this', [$this, 'callbackTest']));
+    $this->assertTrue(has_filter('filter_that', [$this, 'callbackTest']));
 
     /**
      * Pass in a string
      */
     Utils\add_filters(
       'filter_string',
-      [$this, 'callback_test']
+      [$this, 'callbackTest']
     );
-    $this->assertTrue(has_filter('filter_string', [$this, 'callback_test']));
+    $this->assertTrue(has_filter('filter_string', [$this, 'callbackTest']));
 
     /**
      * Test priorities
      */
     Utils\add_filters(
       ['filter_priorities', 'filter_more_priorities'],
-      [$this, 'callback_test'],
+      [$this, 'callbackTest'],
       50
     );
-    $this->assertTrue(has_filter('filter_priorities', [$this, 'callback_test'], 50));
-    $this->assertTrue(has_filter('filter_more_priorities', [$this, 'callback_test'], 50));
+    $this->assertTrue(has_filter('filter_priorities', [$this, 'callbackTest'], 50));
+    $this->assertTrue(has_filter('filter_more_priorities', [$this, 'callbackTest'], 50));
   }
 
   public function testAlerts()
@@ -65,5 +65,5 @@ class UtilTest extends TestCase {
   /**
    * Empty function to be used as a callback
    */
-  public function callback_test() {}
+  public function callbackTest() {}
 }
