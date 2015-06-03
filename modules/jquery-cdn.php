@@ -6,11 +6,11 @@ class Fallback {
   /**
    * @var bool
    */
-  static $add_jquery_fallback = false;
+  private static $add_jquery_fallback = false;
   /**
    * @var string
    */
-  static $jquery_url;
+  private static $jquery_url;
 
   /**
    * Load jQuery from Google's CDN with a local fallback
