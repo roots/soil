@@ -70,7 +70,7 @@ class NavWalker extends \Walker_Nav_Menu {
     $classes = preg_replace('/(current(-menu-|[-_]page[-_])(item|parent|ancestor))/', 'active', $classes);
     $classes = preg_replace('/^((menu|page)[-_\w+]+)+/', '', $classes);
 
-    $classes[] = 'menu-' . $slug;
+    $classes[] = 'menu-item menu-' . $slug;
 
     $classes = array_unique($classes);
 
