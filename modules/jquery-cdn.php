@@ -16,7 +16,7 @@ function register_jquery() {
 
     wp_register_script(
       'jquery',
-      'https://ajax.googleapis.com/ajax/libs/jquery/' . $jquery_version . '/jquery.min.js',
+      'https://ajax.googleapis.com/ajax/libs/jquery/' . $jquery_version . '/jquery.min.js?ver=' . $jquery_version,
       [],
       null,
       true
