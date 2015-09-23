@@ -17,7 +17,7 @@ function redirect() {
   }
 
   $search_base = $wp_rewrite->search_base;
-  if (is_search() && !is_admin() && strpos($_SERVER['REQUEST_URI'], "/{$search_base}/") === false) {
+  if (is_search() && !is_admin() && strpos($_SERVER['REQUEST_URI'], "/{$search_base}/") === false && strpos($_SERVER['REQUEST_URI'], '&') === false) {
     wp_redirect(get_search_link());
     exit();
   }
