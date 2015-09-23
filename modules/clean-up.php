@@ -100,8 +100,11 @@ add_filter('language_attributes', __NAMESPACE__ . '\\language_attributes');
 function clean_style_tag($input) {
   preg_match_all("!<link rel='stylesheet'\s?(id='[^']+')?\s+href='(.*)' type='text/css' media='(.*)' />!", $input, $matches);
   // Only display media if it is meaningful
-  $media = $matches[3][0] !== '' && $matches[3][0] !== 'all' ? ' media="' . $matches[3][0] . '"' : '';
-  return '<link rel="stylesheet" href="' . $matches[2][0] . '"' . $media . '>' . "\n";
+  $media = isset($matches[3][0]) && $matches[3][0] !== 'all' ? ' media="' . $matches[3][0] . '"' : '';
+  // Only display escaped stylesheet url's
+  $href = isset($matches[2][0]) ? esc_url($matches[2][0]) : '';
+  // Only display <link> if href exists
+  return empty($href) ? '' : '<link rel="stylesheet" href="' . $href . '"' . $media . '>' . "\n";
 }
 add_filter('style_loader_tag', __NAMESPACE__ . '\\clean_style_tag');
 
