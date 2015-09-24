@@ -33,7 +33,7 @@ You can install this plugin via the command-line or the WordPress admin panel.
 If you're [using Composer to manage WordPress](https://roots.io/using-composer-with-wordpress/), add Soil to your project's dependencies.
 
 ```sh
-composer require roots/soil 3.4.0
+composer require roots/soil 3.5.0
 ```
 
 Then activate the plugin via [wp-cli](http://wp-cli.org/commands/plugin/activate/).
