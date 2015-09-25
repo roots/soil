@@ -73,11 +73,9 @@ class NavWalker extends \Walker_Nav_Menu {
     $classes[] = 'menu-item menu-' . $slug;
 
     $classes = array_unique($classes);
-
-    return array_filter($classes, function ($element) {
-      $element = trim($element);
-      return !empty($element);
-    });
+    $classes = array_map('trim', $classes);
+    
+    return array_filter($classes);
   }
 }
 
