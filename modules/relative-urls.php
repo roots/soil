@@ -14,7 +14,7 @@ use Roots\Soil\Utils;
  * add_theme_support('soil-relative-urls');
  */
  
-if (is_admin() || preg_match('/sitemap(_index)?\.xml/', $_SERVER['REQUEST_URI']) || in_array($GLOBALS['pagenow'], ['wp-login.php', 'wp-register.php'])) {
+if (is_admin() || preg_match('/^\/[a-zA-Z0-9_-]sitemap(_index)?\d.xml$/', $_SERVER['REQUEST_URI']) || in_array($GLOBALS['pagenow'], ['wp-login.php', 'wp-register.php'])) {
   return;
 }
 
