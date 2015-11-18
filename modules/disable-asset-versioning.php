@@ -5,7 +5,7 @@ namespace Roots\Soil\DisableAssetVersioning;
 /**
  * Remove version query string from all styles and scripts
  *
- * You can enable/disable this feature in functions.php (or lib/config.php if you're using Sage):
+ * You can enable/disable this feature in functions.php (or lib/setup.php if you're using Sage):
  * add_theme_support('soil-disable-asset-versioning');
  */
 function remove_script_version($src) {
