@@ -1,3 +1,6 @@
+### HEAD
+* Update sitemap conditional ([#126](https://github.com/roots/soil/issues/126))
+
 ### 3.5.0: September 24th, 2015
 * Disable nice search on advanced queries ([#115](https://github.com/roots/soil/issues/115))
 * Add `.menu-item` class to all items in walker ([#112](https://github.com/roots/soil/issues/112))
