@@ -1,4 +1,5 @@
 ### HEAD
+* Add core `menu-item-has-children` class on parent nav elements ([#127](https://github.com/roots/soil/issues/127))
 * Update sitemap conditional ([#126](https://github.com/roots/soil/issues/126))
 
 ### 3.5.0: September 24th, 2015
