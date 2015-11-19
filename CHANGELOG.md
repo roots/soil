@@ -1,4 +1,5 @@
-### HEAD
+### 3.6.0: November 18th, 2015
+* Add priority for loading modules (compatibility with Sage 8.3.0+)
 * Add core `menu-item-has-children` class on parent nav elements ([#127](https://github.com/roots/soil/issues/127))
 * Update sitemap conditional ([#126](https://github.com/roots/soil/issues/126))
 
