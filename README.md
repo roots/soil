@@ -3,6 +3,8 @@
 
 A WordPress plugin which contains a collection of modules to apply theme-agnostic front-end modifications.
 
+Soil is a commercial plugin available from [https://roots.io/plugins/soil/](https://roots.io/plugins/soil/). It's hosted on a public GitHub repository to allow for contributions from the community. It's also published on Packagist to allow easier installation with Composer.
+
 ## Requirements
 
 <table>
@@ -77,4 +79,4 @@ wp plugin activate soil
 
 ## Support
 
-Use the [Roots Discourse](https://discourse.roots.io/) to ask questions and get support.
+Use the [Roots Discourse](https://discourse.roots.io/) to ask questions and get support. License is required.
