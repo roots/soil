@@ -53,29 +53,32 @@ wp plugin activate soil
 
 ## Modules
 
-* **Load jQuery from the Google CDN**<br>
-  `add_theme_support('soil-jquery-cdn');`
-
 * **Cleaner WordPress markup**<br>
   `add_theme_support('soil-clean-up');`
 
-* **Cleaner walker for navigation menus**<br>
-  `add_theme_support('soil-nav-walker');`
-
-* **Root relative URLs**<br>
-  `add_theme_support('soil-relative-urls');`
-
-* **Google Analytics** ([more info](https://github.com/roots/soil/wiki/Google-Analytics))<br>
-  `add_theme_support('soil-google-analytics', 'UA-XXXXX-Y');`
-
-* **Move all JS to the footer**<br>
-  `add_theme_support('soil-js-to-footer');`
+* **Disable asset versioning**<br>
+  `add_theme_support('soil-disable-asset-versioning');`
 
 * **Disable trackbacks**<br>
   `add_theme_support('soil-disable-trackbacks');`
 
-* **Disable asset versioning**<br>
-  `add_theme_support('soil-disable-asset-versioning');`
+* **Google Analytics** ([more info](https://github.com/roots/soil/wiki/Google-Analytics))<br>
+  `add_theme_support('soil-google-analytics', 'UA-XXXXX-Y');`
+
+* **Load jQuery from the Google CDN**<br>
+  `add_theme_support('soil-jquery-cdn');`
+
+* **Move all JS to the footer**<br>
+  `add_theme_support('soil-js-to-footer');`
+
+* **Cleaner walker for navigation menus**<br>
+  `add_theme_support('soil-nav-walker');`
+
+* **Convert search results from `/?s=query` to `/search/query/`**<br>
+  `add_theme_support('soil-nice-search');`
+
+* **Root relative URLs**<br>
+  `add_theme_support('soil-relative-urls');`
 
 ## Support
 
