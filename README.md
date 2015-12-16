@@ -46,7 +46,7 @@ wp plugin activate soil
 
 ### via WordPress Admin Panel
 
-1. Download the [latest zip](https://github.com/roots/soil/archive/master.zip) of this repo.
+1. Download the [latest zip](https://github.com/roots/soil/releases/latest) of this repo.
 2. In your WordPress admin panel, navigate to Plugins->Add New
 3. Click Upload Plugin
 4. Upload the zip file that you downloaded.
