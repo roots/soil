@@ -1,4 +1,4 @@
-### HEAD
+### 3.6.1: December 24th, 2015
 * Remove `wp-embed.js` and `wp-json` from head ([#129](https://github.com/roots/soil/issues/129))
 
 ### 3.6.0: November 18th, 2015
