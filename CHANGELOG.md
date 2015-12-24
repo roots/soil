@@ -1,3 +1,6 @@
+### 3.6.2: December 24th, 2015
+* Add missing oEmbed cleanup ([#134](https://github.com/roots/soil/issues/134))
+
 ### 3.6.1: December 24th, 2015
 * Remove `wp-embed.js` and `wp-json` from head ([#129](https://github.com/roots/soil/issues/129))
 
