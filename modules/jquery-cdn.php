@@ -10,12 +10,13 @@ namespace Roots\Soil\JqueryCDN;
  */
 function register_jquery() {
   $jquery_version = wp_scripts()->registered['jquery']->ver;
+  $suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
   wp_deregister_script('jquery');
 
   wp_register_script(
     'jquery',
-    'https://ajax.googleapis.com/ajax/libs/jquery/' . $jquery_version . '/jquery.min.js',
+    'https://ajax.googleapis.com/ajax/libs/jquery/' . $jquery_version . '/jquery' . $suffix . '.js',
     [],
     null,
     true
