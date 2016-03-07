@@ -1,4 +1,5 @@
 ### HEAD
+* Disable relative URLs in feeds ([#145](https://github.com/roots/soil/issues/145))
 * Switch from Google CDN to jQuery CDN ([#144](https://github.com/roots/soil/issues/144))
 
 ### 3.6.2: December 24th, 2015
