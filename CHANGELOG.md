@@ -1,4 +1,5 @@
 ### HEAD
+* Add relative URLs to responsive images output ([#146](https://github.com/roots/soil/issues/146))
 * Disable relative URLs in feeds ([#145](https://github.com/roots/soil/issues/145))
 * Switch from Google CDN to jQuery CDN ([#144](https://github.com/roots/soil/issues/144))
 
