@@ -6,6 +6,10 @@ namespace Roots\Soil\Utils;
  * Make a URL relative
  */
 function root_relative_url($input) {
+  if (is_feed()) {
+    return $input;
+  }
+
   $url = parse_url($input);
   if (!isset($url['host']) || !isset($url['path'])) {
     return $input;
