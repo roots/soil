@@ -3,7 +3,7 @@
 namespace Roots\Soil\JqueryCDN;
 
 /**
- * Load jQuery from Google's CDN with a local fallback
+ * Load jQuery from jQuery's CDN with a local fallback
  *
  * You can enable/disable this feature in functions.php (or lib/setup.php if you're using Sage):
  * add_theme_support('soil-jquery-cdn');
@@ -15,7 +15,7 @@ function register_jquery() {
 
   wp_register_script(
     'jquery',
-    'https://ajax.googleapis.com/ajax/libs/jquery/' . $jquery_version . '/jquery.min.js',
+    'https://code.jquery.com/jquery-' . $jquery_version . '.min.js',
     [],
     null,
     true

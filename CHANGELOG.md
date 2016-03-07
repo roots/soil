@@ -1,3 +1,6 @@
+### HEAD
+* Switch from Google CDN to jQuery CDN ([#144](https://github.com/roots/soil/issues/144))
+
 ### 3.6.2: December 24th, 2015
 * Add missing oEmbed cleanup ([#134](https://github.com/roots/soil/issues/134))
 
