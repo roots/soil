@@ -65,7 +65,7 @@ wp plugin activate soil
 * **Google Analytics** ([more info](https://github.com/roots/soil/wiki/Google-Analytics))<br>
   `add_theme_support('soil-google-analytics', 'UA-XXXXX-Y');`
 
-* **Load jQuery from the Google CDN**<br>
+* **Load jQuery from the jQuery CDN**<br>
   `add_theme_support('soil-jquery-cdn');`
 
 * **Move all JS to the footer**<br>
