@@ -2,6 +2,8 @@
 <ruleset name="Roots">
   <description>Roots Coding Standards</description>
 
+  <exclude-pattern>vendor</exclude-pattern>
+
   <!-- Use PSR-2 as a base -->
   <rule ref="PSR2">
     <!-- Allow opening and closing braces for functions and classes to be on the same line -->

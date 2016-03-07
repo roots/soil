@@ -15,6 +15,8 @@ install:
   - composer self-update && composer --version
   - export PATH="$HOME/.composer/vendor/bin:$PATH"
   - composer global require squizlabs/php_codesniffer
+  - composer install
 
 script:
   - phpcs --standard=ruleset.xml --extensions=php -n -s .
+  - phpunit

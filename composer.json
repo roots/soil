@@ -23,8 +23,17 @@
     "issues": "https://github.com/roots/soil/issues",
     "forum": "https://discourse.roots.io/"
   },
+  "autoload": {
+    "psr-4": {
+      "Roots\\Soil\\": "."
+    }
+  },
   "require": {
     "php": ">=5.4.0",
     "composer/installers": "~1.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~4.6",
+    "brain/monkey": "^1.1"
   }
 }
