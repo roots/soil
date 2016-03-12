@@ -2,19 +2,27 @@ sudo: false
 language: php
 php:
   - nightly
+  - 7.0
   - 5.6
   - 5.5
   - 5.4
-  - hhvm
 
 matrix:
+  fast_finish: true
   allow_failures:
     - php: nightly
 
+cache:
+  directories:
+    - $HOME/.composer/cache
+    - vendor
+
+before_install:
+  - phpenv config-rm xdebug.ini
+  - composer self-update
+
 install:
-  - composer self-update && composer --version
-  - export PATH="$HOME/.composer/vendor/bin:$PATH"
-  - composer global require squizlabs/php_codesniffer
+  - composer install -o --prefer-dist --no-interaction
 
 script:
-  - phpcs --standard=ruleset.xml --extensions=php -n -s .
+  - composer test
