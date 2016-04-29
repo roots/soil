@@ -30,15 +30,6 @@
   "require-dev": {
     "squizlabs/php_codesniffer": "^2.5.1"
   },
-  "archive" : {
-    "exclude": [
-      ".editorconfig",
-      ".gitignore",
-      ".travis.yml",
-      "CONTRIBUTING.md",
-      "phpcs.xml"
-    ]
-  },
   "scripts": {
     "test": [
       "vendor/bin/phpcs --extensions=php --ignore=vendor/ -n -s ."
