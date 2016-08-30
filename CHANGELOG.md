@@ -1,4 +1,4 @@
-### HEAD
+### 3.7.1: August 30th, 2016
 * Enable jQuery noConflict ([#160](https://github.com/roots/soil/issues/160))
 * Disable DNS Prefetch for WordPress Emoji (WP 4.6) ([#159](https://github.com/roots/soil/issues/159))
 
