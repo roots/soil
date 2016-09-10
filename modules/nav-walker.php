@@ -57,7 +57,7 @@ class NavWalker extends \Walker_Nav_Menu {
   // @codingStandardsIgnoreEnd
 
   public function cssClasses($classes, $item) {
-    $slug = sanitize_title($item->title);
+    $slug = $item->post_name;
 
     // Fix core `active` behavior for custom post types
     if ($this->cpt) {
