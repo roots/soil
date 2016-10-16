@@ -46,7 +46,7 @@ function head_cleanup() {
     remove_action('wp_head', [$wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style']);
   }
 
-  if (!class_exists('WPSEO_Frontend')) {
+  if (!class_exists('WPSEO_Frontend') && !class_exists('The_SEO_Framework_Load')) {
     remove_action('wp_head', 'rel_canonical');
     add_action('wp_head', __NAMESPACE__ . '\\rel_canonical');
   }
