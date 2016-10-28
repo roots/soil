@@ -9,7 +9,7 @@ namespace Roots\Soil\CleanUp;
  * Remove inline CSS and JS from WP emoji support
  * Remove inline CSS used by Recent Comments widget
  * Remove inline CSS used by posts with galleries
- * Remove self-closing tag and change ''s to "'s on rel_canonical()
+ * Remove self-closing tag
  *
  * You can enable/disable this feature in functions.php (or lib/setup.php if you're using Sage):
  * add_theme_support('soil-clean-up');
@@ -45,26 +45,6 @@ function head_cleanup() {
   if (isset($wp_widget_factory->widgets['WP_Widget_Recent_Comments'])) {
     remove_action('wp_head', [$wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style']);
   }
-
-  if (!class_exists('WPSEO_Frontend')) {
-    remove_action('wp_head', 'rel_canonical');
-    add_action('wp_head', __NAMESPACE__ . '\\rel_canonical');
-  }
-}
-
-function rel_canonical() {
-  global $wp_the_query;
-
-  if (!is_singular()) {
-    return;
-  }
-
-  if (!$id = $wp_the_query->get_queried_object_id()) {
-    return;
-  }
-
-  $link = get_permalink($id);
-  echo "\t<link rel=\"canonical\" href=\"$link\">\n";
 }
 add_action('init', __NAMESPACE__ . '\\head_cleanup');
 
