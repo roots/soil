@@ -39,8 +39,10 @@ $root_rel_filters = apply_filters('soil/relative-url-filters', [
 Utils\add_filters($root_rel_filters, 'Roots\\Soil\\Utils\\root_relative_url');
 
 add_filter('wp_calculate_image_srcset', function ($sources) {
-  foreach ($sources as $source => $src) {
-    $sources[$source]['url'] = \Roots\Soil\Utils\root_relative_url($src['url']);
+  if (is_array($sources)) {
+    foreach ($sources as $source => $src) {
+      $sources[$source]['url'] = \Roots\Soil\Utils\root_relative_url($src['url']);
+    }
   }
   return $sources;
 });
