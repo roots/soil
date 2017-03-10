@@ -54,6 +54,12 @@ require_once __DIR__ . '/lib/utils.php';
 
 function load_modules() {
   global $_wp_theme_features;
+
+  // Skip loading modules in the admin.
+  if ( is_admin() ) {
+    return;
+  }
+
   foreach (glob(__DIR__ . '/modules/*.php') as $file) {
     $feature = 'soil-' . basename($file, '.php');
     if (isset($_wp_theme_features[$feature])) {
