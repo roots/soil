@@ -56,7 +56,7 @@ function load_modules() {
   global $_wp_theme_features;
 
   // Skip loading modules in the admin.
-  if ( is_admin() ) {
+  if (is_admin()) {
     return;
   }
 
