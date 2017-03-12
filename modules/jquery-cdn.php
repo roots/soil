@@ -21,7 +21,7 @@ function register_jquery() {
     true
   );
 
-  add_filter('wp_resource_hints', function($urls, $relation_type) {
+  add_filter('wp_resource_hints', function ($urls, $relation_type) {
     if ($relation_type === 'dns-prefetch') {
       $urls[] = 'code.jquery.com';
     }
