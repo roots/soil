@@ -21,6 +21,13 @@ function register_jquery() {
     true
   );
 
+  add_filter('wp_resource_hints', function ($urls, $relation_type) {
+    if ($relation_type === 'dns-prefetch') {
+      $urls[] = 'code.jquery.com';
+    }
+    return $urls;
+  }, 10, 2);
+
   add_filter('script_loader_src', __NAMESPACE__ . '\\jquery_local_fallback', 10, 2);
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\register_jquery', 100);
