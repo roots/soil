@@ -63,8 +63,10 @@ class NavWalker extends \Walker_Nav_Menu {
     if ($this->cpt) {
       $classes = str_replace('current_page_parent', '', $classes);
 
-      if (Utils\url_compare($this->archive, $item->url)) {
-        $classes[] = 'active';
+      if ($this->archive) {
+        if (Utils\url_compare($this->archive, $item->url)) {
+          $classes[] = 'active';
+        }
       }
     }
 
