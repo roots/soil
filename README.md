@@ -37,7 +37,7 @@ You can install this plugin via the command-line or the WordPress admin panel.
 If you're [using Composer to manage WordPress](https://roots.io/using-composer-with-wordpress/), add Soil to your project's dependencies.
 
 ```sh
-composer require roots/soil 3.7.1
+composer require roots/soil
 ```
 
 Then activate the plugin via [wp-cli](http://wp-cli.org/commands/plugin/activate/).
@@ -81,7 +81,7 @@ wp plugin activate soil
 
 * **Root relative URLs**<br>
   `add_theme_support('soil-relative-urls');`
-  
+
 And in a format you can copy & paste into your theme:
 ```php
 /**

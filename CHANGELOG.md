@@ -1,3 +1,11 @@
+### 3.7.2: June 11th, 2017
+* Don't apply relative URLs to SEO Framework's social image ([#184](https://github.com/roots/soil/pull/184))
+* Don't do `active` fix for CPT if no archive page ([#180](https://github.com/roots/soil/pull/180))
+* Prefetch code.jquery.com ([#177](https://github.com/roots/soil/pull/177))
+* Add `theme_file_uri` to relative URLs ([#176](https://github.com/roots/soil/pull/176))
+* Fix PHP warnings being thrown in development ([#172](https://github.com/roots/soil/pull/172))
+* Remove rel_canonical from clean-up module ([#169](https://github.com/roots/soil/pull/169))
+
 ### 3.7.1: August 30th, 2016
 * Enable jQuery noConflict ([#160](https://github.com/roots/soil/issues/160))
 * Disable DNS Prefetch for WordPress Emoji (WP 4.6) ([#159](https://github.com/roots/soil/issues/159))
