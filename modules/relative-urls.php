@@ -44,3 +44,13 @@ add_filter('wp_calculate_image_srcset', function ($sources) {
   }
   return $sources;
 });
+
+/**
+ * Compatibility with The SEO Framework
+ */
+add_filter('the_seo_framework_ogimage_output', function ($image) {
+  return home_url($image);
+});
+add_filter('the_seo_framework_twitterimage_output', function ($image) {
+  return home_url($image);
+});
