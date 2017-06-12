@@ -34,7 +34,8 @@ $root_rel_filters = apply_filters('soil/relative-url-filters', [
   'term_link',
   'the_author_posts_link',
   'script_loader_src',
-  'style_loader_src'
+  'style_loader_src',
+  'theme_file_uri'
 ]);
 Utils\add_filters($root_rel_filters, 'Roots\\Soil\\Utils\\root_relative_url');
 
