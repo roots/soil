@@ -1,3 +1,6 @@
+### HEAD
+* Fix SEO Framework social image when custom URL used ([#188](https://github.com/roots/soil/pull/188))
+
 ### 3.7.2: June 11th, 2017
 * Don't apply relative URLs to SEO Framework's social image ([#184](https://github.com/roots/soil/pull/184))
 * Don't do `active` fix for CPT if no archive page ([#180](https://github.com/roots/soil/pull/180))

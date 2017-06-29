@@ -49,9 +49,6 @@ add_filter('wp_calculate_image_srcset', function ($sources) {
 /**
  * Compatibility with The SEO Framework
  */
-add_filter('the_seo_framework_ogimage_output', function ($image) {
-  return home_url($image);
-});
-add_filter('the_seo_framework_twitterimage_output', function ($image) {
-  return home_url($image);
+Utils\add_filters(['the_seo_framework_ogimage_output', 'the_seo_framework_twitterimage_output'], function ($image) {
+  return 0 === strpos($image, home_url()) ? $image : home_url($image);
 });
