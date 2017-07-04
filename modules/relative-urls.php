@@ -49,6 +49,9 @@ add_filter('wp_calculate_image_srcset', function ($sources) {
 /**
  * Compatibility with The SEO Framework
  */
-Utils\add_filters(['the_seo_framework_ogimage_output', 'the_seo_framework_twitterimage_output'], function ($image) {
-  return 0 === strpos($image, home_url()) ? $image : home_url($image);
+add_action('the_seo_framework_do_before_output', function () {
+  remove_filter('wp_get_attachment_url', 'Roots\\Soil\\Utils\\root_relative_url');
+});
+add_action('the_seo_framework_do_after_output', function () {
+  add_filter('wp_get_attachment_url', 'Roots\\Soil\\Utils\\root_relative_url');
 });
