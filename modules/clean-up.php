@@ -136,19 +136,6 @@ function embed_wrap($cache) {
 add_filter('embed_oembed_html', __NAMESPACE__ . '\\embed_wrap');
 
 /**
- * Remove unnecessary dashboard widgets
- *
- * @link http://www.deluxeblogtips.com/2011/01/remove-dashboard-widgets-in-wordpress.html
- */
-function remove_dashboard_widgets() {
-  remove_meta_box('dashboard_incoming_links', 'dashboard', 'normal');
-  remove_meta_box('dashboard_plugins', 'dashboard', 'normal');
-  remove_meta_box('dashboard_primary', 'dashboard', 'normal');
-  remove_meta_box('dashboard_secondary', 'dashboard', 'normal');
-}
-add_action('admin_init', __NAMESPACE__ . '\\remove_dashboard_widgets');
-
-/**
  * Remove unnecessary self-closing tags
  */
 function remove_self_closing_tags($input) {
