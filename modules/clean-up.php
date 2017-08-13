@@ -39,12 +39,7 @@ function head_cleanup() {
   remove_filter('wp_mail', 'wp_staticize_emoji_for_email');
   add_filter('use_default_gallery_style', '__return_false');
   add_filter('emoji_svg_url', '__return_false');
-
-  global $wp_widget_factory;
-
-  if (isset($wp_widget_factory->widgets['WP_Widget_Recent_Comments'])) {
-    remove_action('wp_head', [$wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style']);
-  }
+  add_filter('show_recent_comments_widget_style', '__return_false');
 }
 add_action('init', __NAMESPACE__ . '\\head_cleanup');
 
