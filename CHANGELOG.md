@@ -1,5 +1,8 @@
-### HEAD
-* Fix SEO Framework social image when custom URL used ([#188](https://github.com/roots/soil/pull/188))
+### 3.7.3: August 13th, 2017
+* Update method for removing recent commets widget styles ([#195](https://github.com/roots/soil/pull/195))
+* Remove dashboard widgets removal ([#192](https://github.com/roots/soil/pull/192))
+* Add `parent_theme_file_uri` to relative URLs ([#191](https://github.com/roots/soil/pull/191))
+* Fix SEO Framework social images ([#190](https://github.com/roots/soil/pull/190))
 
 ### 3.7.2: June 11th, 2017
 * Don't apply relative URLs to SEO Framework's social image ([#184](https://github.com/roots/soil/pull/184))
