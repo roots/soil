@@ -4,7 +4,7 @@
 - [ ] This is a feature request
 - [ ] This is a bug report
 - [ ] This request isn't a duplicate of an [existing issue](https://github.com/roots/soil/issues)
-- [ ] I've read the [docs](https://roots.io/soil/docs) and followed them (if applicable)
+- [ ] I've read the [README](https://github.com/roots/soil/blob/master/README.md) and followed its instructions (if applicable)
 
 Replace any `X` with your information.
 
