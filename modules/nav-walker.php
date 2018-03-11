@@ -15,7 +15,7 @@ use Roots\Soil\Utils;
  *   <li class="menu-home"><a href="/">Home</a></li>
  *   <li class="menu-sample-page"><a href="/sample-page/">Sample Page</a></li>
  *
- * You can enable/disable this feature in functions.php (or lib/setup.php if you're using Sage):
+ * You can enable/disable this feature in functions.php (or app/setup.php if you're using Sage):
  * add_theme_support('soil-nav-walker');
  */
 class NavWalker extends \Walker_Nav_Menu {

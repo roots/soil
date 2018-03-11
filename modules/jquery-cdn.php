@@ -5,7 +5,7 @@ namespace Roots\Soil\JqueryCDN;
 /**
  * Load jQuery from jQuery's CDN with a local fallback
  *
- * You can enable/disable this feature in functions.php (or lib/setup.php if you're using Sage):
+ * You can enable/disable this feature in functions.php (or app/setup.php if you're using Sage):
  * add_theme_support('soil-jquery-cdn');
  */
 function register_jquery() {
