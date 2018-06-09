@@ -13,7 +13,7 @@ namespace Roots\Soil\GoogleAnalytics;
  */
 function load_script() {
   $gaID = options('gaID');
-	$anomymizeIP = options('anonymizeIP');
+  $anomymizeIP = options('anonymizeIP');
   if (!$gaID) { return; }
   $loadGA = (!defined('WP_ENV') || \WP_ENV === 'production') && !current_user_can('manage_options');
   $loadGA = apply_filters('soil/loadGA', $loadGA);
@@ -26,10 +26,10 @@ function load_script() {
       s.ga.q=[];s.ga.l=+new Date;}(window,console,'Google Analytics: ',[].slice))
     <?php endif; ?>
     ga('create','<?= $gaID; ?>','auto');
-		<?php if ($anomymizeIP) : ?>
-		ga('set', 'anonymizeIp', true);
-		<?php endif; ?>
-		ga('send','pageview')
+    <?php if ($anomymizeIP) : ?>
+    ga('set', 'anonymizeIp', true);
+    <?php endif; ?>
+    ga('send','pageview')
   </script>
   <?php if ($loadGA) : ?>
     <script src="https://www.google-analytics.com/analytics.js" async defer></script>
