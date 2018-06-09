@@ -43,7 +43,7 @@ function options($option = null) {
     $options = \Roots\Soil\Options::getByFile(__FILE__) + ['', 'wp_footer'];
     $options['gaID'] = &$options[0];
     $options['hook'] = &$options[1];
-		$options['anonymizeIP'] = &$options[2];
+    $options['anonymizeIP'] = &$options[2];
   }
   return is_null($option) ? $options : $options[$option];
 }
