@@ -8,8 +8,9 @@ namespace Roots\Soil\GoogleAnalytics;
  * Cookie domain is 'auto' configured. See: http://goo.gl/VUCHKM
  * You can enable/disable this feature in functions.php (or app/setup.php if you're using Sage):
  * add_theme_support('soil-google-analytics', 'UA-XXXXX-Y', 'wp_footer', true);
- * If you need to e GDPR compliant it is useful to set the last option to true,
- * because this anonymizes IP addresses before going to google.
+ *
+ * If you need to be GDPR compliant it is useful to set the last option to true,
+ * this anonymizes IP addresses before sending data to Google.
  */
 function load_script() {
   $gaID = options('gaID');
