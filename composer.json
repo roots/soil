@@ -1,6 +1,6 @@
 {
   "name": "roots/soil",
-  "type": "wordpress-plugin",
+  "type": "wordpress-muplugin",
   "license": "MIT",
   "description": "A WordPress plugin which contains a collection of modules to apply theme-agnostic front-end modifications",
   "homepage": "https://roots.io/plugins/soil/",
