@@ -128,4 +128,3 @@ function nav_menu_args($args = '') {
   return array_merge($args, $nav_menu_args);
 }
 add_filter('wp_nav_menu_args', __NAMESPACE__ . '\\nav_menu_args');
-add_filter('nav_menu_item_id', '__return_null');
