@@ -23,8 +23,6 @@ class NavWalker extends \Walker_Nav_Menu {
   private $archive; // Stores the archive page for current URL
 
   public function __construct() {
-    add_filter('nav_menu_css_class', array($this, 'cssClasses'), 10, 2);
-    add_filter('nav_menu_item_id', '__return_null');
     $cpt           = get_post_type();
     $this->cpt     = in_array($cpt, get_post_types(array('_builtin' => false)));
     $this->archive = get_post_type_archive_link($cpt);
@@ -89,6 +87,23 @@ class NavWalker extends \Walker_Nav_Menu {
     $classes = array_map('trim', $classes);
 
     return array_filter($classes);
+  }
+
+  public function walk($elements, $max_depth)
+  {
+      // Add filters
+      add_filter('nav_menu_css_class', array($this, 'cssClasses'), 10, 2);
+      add_filter('nav_menu_item_id', '__return_null');
+
+      // Perform usual walk
+      $output = call_user_func_array(['parent', 'walk'], func_get_args());
+
+      // Unregister filters
+      remove_filter('nav_menu_css_class', [$this, 'cssClasses']);
+      remove_filter('nav_menu_item_id', '__return_null');
+
+      // Return result
+      return $output;
   }
 }
 
