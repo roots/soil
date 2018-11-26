@@ -1,4 +1,4 @@
-### 3.8.0: October 1st, 2018
+### HEAD
 * Add module for disabling the REST API ([#209](https://github.com/roots/soil/pull/209))
 
 ### 3.7.3: August 13th, 2017
