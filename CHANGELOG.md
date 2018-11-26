@@ -1,3 +1,6 @@
+### HEAD
+* Add module for disabling the REST API ([#209](https://github.com/roots/soil/pull/209))
+
 ### 3.7.3: August 13th, 2017
 * Update method for removing recent commets widget styles ([#195](https://github.com/roots/soil/pull/195))
 * Remove dashboard widgets removal ([#192](https://github.com/roots/soil/pull/192))
