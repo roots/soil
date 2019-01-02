@@ -18,6 +18,13 @@ if (is_admin() || isset($_GET['sitemap']) || in_array($GLOBALS['pagenow'], ['wp-
   return;
 }
 
+/**
+ * Filters that need to be removed/readded because of The SEO Framework
+ */
+const SEO_FRAMEWORK_FILTERS = [
+    'wp_get_attachment_url'
+];
+
 $root_rel_filters = apply_filters('soil/relative-url-filters', [
   'bloginfo_url',
   'the_permalink',
@@ -51,8 +58,10 @@ add_filter('wp_calculate_image_srcset', function ($sources) {
  * Compatibility with The SEO Framework
  */
 add_action('the_seo_framework_do_before_output', function () {
-  remove_filter('wp_get_attachment_url', 'Roots\\Soil\\Utils\\root_relative_url');
+  $filters = apply_filters('soil/relative-url-filters', SEO_FRAMEWORK_FILTERS);
+  Utils\remove_filters($filters, 'Roots\\Soil\\Utils\\root_relative_url');
 });
 add_action('the_seo_framework_do_after_output', function () {
-  add_filter('wp_get_attachment_url', 'Roots\\Soil\\Utils\\root_relative_url');
+  $filters = apply_filters('soil/relative-url-filters', SEO_FRAMEWORK_FILTERS);
+  Utils\add_filters($filters, 'Roots\\Soil\\Utils\\root_relative_url');
 });

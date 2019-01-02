@@ -49,6 +49,15 @@ function add_filters($tags, $function, $priority = 10, $accepted_args = 1) {
 }
 
 /**
+ * Unhooks a single callback from multiple tags
+ */
+function remove_filters($tags, $function, $priority = 10) {
+  foreach ((array) $tags as $tag) {
+    remove_filter($tag, $function, $priority);
+  }
+}
+
+/**
  * Display error alerts in admin panel
  */
 function alerts($errors, $capability = 'activate_plugins') {
