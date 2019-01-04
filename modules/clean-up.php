@@ -92,7 +92,8 @@ add_filter('style_loader_tag', __NAMESPACE__ . '\\clean_style_tag');
  */
 function clean_script_tag($input) {
   $input = str_replace("type='text/javascript' ", '', $input);
-  return str_replace("'", '"', $input);
+  $input = str_replace('type="text/javascript" ', '', $input);
+  return $input;
 }
 add_filter('script_loader_tag', __NAMESPACE__ . '\\clean_script_tag');
 
