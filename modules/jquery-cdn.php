@@ -35,7 +35,7 @@ add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\register_jquery', 100);
 /**
  * Output the local fallback immediately after jQuery's <script>
  *
- * @link http://wordpress.stackexchange.com/a/12450
+ * @link https://wordpress.stackexchange.com/a/12450
  */
 function jquery_local_fallback($src, $handle = null) {
   static $add_jquery_fallback = false;
