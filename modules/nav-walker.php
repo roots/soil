@@ -107,10 +107,22 @@ function nav_menu_args($args = '') {
   }
 
   if (!$args['walker']) {
-    $nav_menu_args['walker'] = new NavWalker();
+    $nav_menu_args['walker'] = __NAMESPACE__ . '\\NavWalker';
   }
 
   return array_merge($args, $nav_menu_args);
 }
 add_filter('wp_nav_menu_args', __NAMESPACE__ . '\\nav_menu_args');
 add_filter('nav_menu_item_id', '__return_null');
+
+// Temporary fix until WP code fixes this:
+// https://core.trac.wordpress.org/ticket/14142
+// https://wordpress.stackexchange.com/questions/295461/using-string-instead-of-object-class-instantiation-on-the-walker-argument-breaks
+function fix_custom_walkers($args) {
+  if (isset($args['walker']) && is_string($args['walker']) && class_exists($args['walker'])) {
+    $args['walker'] = new $args['walker'];
+  }
+
+  return $args;
+}
+add_filter('wp_nav_menu_args', __NAMESPACE__ . '\\fix_custom_walkers', 1001);
