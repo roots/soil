@@ -92,6 +92,13 @@ add_filter('style_loader_tag', __NAMESPACE__ . '\\clean_style_tag');
  */
 function clean_script_tag($input) {
   $input = str_replace("type='text/javascript' ", '', $input);
+  $input = \preg_replace_callback(
+    '/document.write\(\s*\'(.+)\'\s*\)/is',
+    function ($m) {
+      return str_replace($m[1], addcslashes($m[1], '"'), $m[0]);
+    },
+    $input
+  );
   return str_replace("'", '"', $input);
 }
 add_filter('script_loader_tag', __NAMESPACE__ . '\\clean_script_tag');
