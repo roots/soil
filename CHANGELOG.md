@@ -1,5 +1,6 @@
 ### HEAD
 * Add module for disabling the REST API ([#209](https://github.com/roots/soil/pull/209))
+* Strip '-wp' suffix from WordPress jQuery version to avoid 404 introduced in WordPress 5.2.1 ([#227](https://github.com/roots/soil/pull/227))
 
 ### 3.7.3: August 13th, 2017
 * Update method for removing recent commets widget styles ([#195](https://github.com/roots/soil/pull/195))
