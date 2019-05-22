@@ -10,7 +10,8 @@ namespace Roots\Soil\JqueryCDN;
  */
 function register_jquery() {
   $jquery_version = wp_scripts()->registered['jquery']->ver;
-
+  $jquery_version = str_replace('-wp', '', $jquery_version);
+  
   wp_deregister_script('jquery');
 
   wp_register_script(
