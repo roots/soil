@@ -70,9 +70,6 @@ wp plugin activate soil
 * **Google Analytics** ([more info](https://github.com/roots/soil/wiki/Google-Analytics))<br>
   `add_theme_support('soil-google-analytics', 'UA-XXXXX-Y');`
 
-* **Load jQuery from the jQuery CDN**<br>
-  `add_theme_support('soil-jquery-cdn');`
-
 * **Move all JS to the footer**<br>
   `add_theme_support('soil-js-to-footer');`
 
@@ -96,7 +93,6 @@ add_theme_support('soil-disable-rest-api');
 add_theme_support('soil-disable-asset-versioning');
 add_theme_support('soil-disable-trackbacks');
 add_theme_support('soil-google-analytics', 'UA-XXXXX-Y');
-add_theme_support('soil-jquery-cdn');
 add_theme_support('soil-js-to-footer');
 add_theme_support('soil-nav-walker');
 add_theme_support('soil-nice-search');
