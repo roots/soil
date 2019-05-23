@@ -1,4 +1,5 @@
-### HEAD
+### 3.8.0: May 22nd, 2019
+* Remove jQuery CDN feature ([#228](https://github.com/roots/soil/pull/228))
 * Add module for disabling the REST API ([#209](https://github.com/roots/soil/pull/209))
 
 ### 3.7.3: August 13th, 2017
