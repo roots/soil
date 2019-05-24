@@ -8,7 +8,7 @@ Author:             Roots
 Author URI:         https://roots.io/
 
 License:            MIT License
-License URI:        http://opensource.org/licenses/MIT
+License URI:        https://opensource.org/licenses/MIT
 */
 
 namespace Roots\Soil;
