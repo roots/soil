@@ -1,3 +1,6 @@
+### Unreleased
+* Make plugin compatible with GitHub Updater plugin ([#241](https://github.com/roots/soil/pull/241))
+
 ### 3.8.1: May 23rd, 2019
 * Update version in plugin headers correctly ([#231](https://github.com/roots/soil/pull/231))
 
