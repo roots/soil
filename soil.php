@@ -6,6 +6,7 @@ Description:        A collection of modules to apply theme-agnostic front-end mo
 Version:            3.8.1
 Author:             Roots
 Author URI:         https://roots.io/
+GitHub Plugin URI:  https://github.com/roots/soil
 
 License:            MIT License
 License URI:        http://opensource.org/licenses/MIT
