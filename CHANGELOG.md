@@ -1,3 +1,12 @@
+### 3.9.0: December 7th, 2019
+* Enable beacon tracking for Google Analytics ([#243](https://github.com/roots/soil/pull/243))
+* Add support for GitHub Updater plugin ([#241](https://github.com/roots/soil/pull/241))
+* Add AJAX support for relative URLs module ([#215](https://github.com/roots/soil/pull/236))
+* Fix script cleanup error with single quotes (this was causing JS errors in the WP customizer) ([#224](https://github.com/roots/soil/pull/224))
+* Check if is a search page before adding active class to menu item ([#223](https://github.com/roots/soil/pull/223))
+* Move addition/removal of nav filters to walk function ([#236](https://github.com/roots/soil/pull/2236))
+* Add Google Optimize support for Google Analytics module ([#215](https://github.com/roots/soil/pull/215))
+
 ### 3.8.1: May 23rd, 2019
 * Update version in plugin headers correctly ([#231](https://github.com/roots/soil/pull/231))
 

@@ -3,7 +3,7 @@
 Plugin Name:        Soil
 Plugin URI:         https://roots.io/plugins/soil/
 Description:        A collection of modules to apply theme-agnostic front-end modifications to WordPress.
-Version:            3.8.1
+Version:            3.9.0
 Author:             Roots
 Author URI:         https://roots.io/
 GitHub Plugin URI:  https://github.com/roots/soil
