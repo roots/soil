@@ -9,7 +9,7 @@ Author URI:         https://roots.io/
 GitHub Plugin URI:  https://github.com/roots/soil
 
 License:            MIT License
-License URI:        http://opensource.org/licenses/MIT
+License URI:        https://opensource.org/licenses/MIT
 */
 
 namespace Roots\Soil;
