@@ -55,8 +55,8 @@ require_once __DIR__ . '/lib/utils.php';
 function load_modules() {
   global $_wp_theme_features;
 
-  // Skip loading modules in the admin.
-  if (is_admin()) {
+  // Skip loading modules in the admin but allow in ajax actions.
+  if ((is_admin() && !wp_doing_ajax())) {
     return;
   }
 
