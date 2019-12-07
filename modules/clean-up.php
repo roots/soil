@@ -15,7 +15,7 @@ namespace Roots\Soil\CleanUp;
  * add_theme_support('soil-clean-up');
  */
 function head_cleanup() {
-  // Originally from http://wpengineer.com/1438/wordpress-header/
+  // Originally from https://wpengineer.com/1438/wordpress-header/
   remove_action('wp_head', 'feed_links_extra', 3);
   add_action('wp_head', 'ob_start', 1, 0);
   add_action('wp_head', function () {
@@ -92,6 +92,13 @@ add_filter('style_loader_tag', __NAMESPACE__ . '\\clean_style_tag');
  */
 function clean_script_tag($input) {
   $input = str_replace("type='text/javascript' ", '', $input);
+  $input = \preg_replace_callback(
+    '/document.write\(\s*\'(.+)\'\s*\)/is',
+    function ($m) {
+      return str_replace($m[1], addcslashes($m[1], '"'), $m[0]);
+    },
+    $input
+  );
   return str_replace("'", '"', $input);
 }
 add_filter('script_loader_tag', __NAMESPACE__ . '\\clean_script_tag');
