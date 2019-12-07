@@ -30,7 +30,7 @@ function load_script() {
     <?php if ($anomymizeIP) : ?>
     ga('set', 'anonymizeIp', true);
     <?php endif; ?>
-    ga('set','transport','beacon');
+    ga('set', 'transport', 'beacon');
     ga('send','pageview')
   </script>
   <?php if ($loadGA) : ?>
