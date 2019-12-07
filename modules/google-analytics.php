@@ -7,14 +7,18 @@ namespace Roots\Soil\GoogleAnalytics;
  *
  * Cookie domain is 'auto' configured. See: http://goo.gl/VUCHKM
  * You can enable/disable this feature in functions.php (or app/setup.php if you're using Sage):
- * add_theme_support('soil-google-analytics', 'UA-XXXXX-Y', 'wp_footer', true);
  *
- * If you need to be GDPR compliant it is useful to set the last option to true,
- * this anonymizes IP addresses before sending data to Google.
+ * add_theme_support('soil-google-analytics', 'UA-XXXXX-Y');
+ *
+ * @param string $gaID          Google Analytics ID ('UA-XXXXX-Y')
+ * @param string $hook          Hook name ('wp_footer', 'wp_head')
+ * @param bool   $anomymizeIP   GDPR compliance/anonymize IP addresses
+ * @param string $optimizeID    Google Optimize ID ('GTM-XXXXXX')
  */
 function load_script() {
   $gaID = options('gaID');
   $anomymizeIP = options('anonymizeIP');
+  $optimizeID = options('optimizeID');
   if (!$gaID) { return; }
   $loadGA = (!defined('WP_ENV') || \WP_ENV === 'production') && !current_user_can('manage_options');
   $loadGA = apply_filters('soil/loadGA', $loadGA);
@@ -27,6 +31,9 @@ function load_script() {
       s.ga.q=[];s.ga.l=+new Date;}(window,console,'Google Analytics: ',[].slice))
     <?php endif; ?>
     ga('create','<?= $gaID; ?>','auto');
+    <?php if ($optimizeID) : ?>
+    ga('require','<?= $optimizeID; ?>');
+    <?php endif; ?>
     <?php if ($anomymizeIP) : ?>
     ga('set', 'anonymizeIp', true);
     <?php endif; ?>
@@ -46,6 +53,7 @@ function options($option = null) {
     $options['gaID'] = &$options[0];
     $options['hook'] = &$options[1];
     $options['anonymizeIP'] = &$options[2];
+    $options['optimizeID'] = &$options[3];
   }
   return is_null($option) ? $options : $options[$option];
 }
