@@ -89,21 +89,20 @@ class NavWalker extends \Walker_Nav_Menu {
     return array_filter($classes);
   }
 
-  public function walk($elements, $max_depth)
-  {
-      // Add filters
-      add_filter('nav_menu_css_class', array($this, 'cssClasses'), 10, 2);
-      add_filter('nav_menu_item_id', '__return_null');
+  public function walk($elements, $max_depth, ...$args) {
+    // Add filters
+    add_filter('nav_menu_css_class', array($this, 'cssClasses'), 10, 2);
+    add_filter('nav_menu_item_id', '__return_null');
 
-      // Perform usual walk
-      $output = call_user_func_array(['parent', 'walk'], func_get_args());
+    // Perform usual walk
+    $output = call_user_func_array(['parent', 'walk'], func_get_args());
 
-      // Unregister filters
-      remove_filter('nav_menu_css_class', [$this, 'cssClasses']);
-      remove_filter('nav_menu_item_id', '__return_null');
+    // Unregister filters
+    remove_filter('nav_menu_css_class', [$this, 'cssClasses']);
+    remove_filter('nav_menu_item_id', '__return_null');
 
-      // Return result
-      return $output;
+    // Return result
+    return $output;
   }
 }
 
