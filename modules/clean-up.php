@@ -95,7 +95,9 @@ function clean_script_tag($input) {
   $input = \preg_replace_callback(
     '/document.write\(\s*\'(.+)\'\s*\)/is',
     function ($m) {
-      return str_replace($m[1], addcslashes($m[1], '"'), $m[0]);
+      // Escape only unescaped double quotes as addcslashes would add multiple slashes
+      $script = preg_replace('/"+(?<!\\")/', '\"', $m[1]);
+      return str_replace($m[1], $script, $m[0]);
     },
     $input
   );
