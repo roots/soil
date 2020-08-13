@@ -127,17 +127,6 @@ function body_class($classes) {
 add_filter('body_class', __NAMESPACE__ . '\\body_class');
 
 /**
- * Wrap embedded media as suggested by Readability
- *
- * @link https://gist.github.com/965956
- * @link http://www.readability.com/publishers/guidelines#publisher
- */
-function embed_wrap($cache) {
-  return '<div class="entry-content-asset">' . $cache . '</div>';
-}
-add_filter('embed_oembed_html', __NAMESPACE__ . '\\embed_wrap');
-
-/**
  * Remove unnecessary self-closing tags
  */
 function remove_self_closing_tags($input) {
