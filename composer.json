@@ -14,6 +14,11 @@
       "name": "Scott Walkinshaw",
       "email": "scott.walkinshaw@gmail.com",
       "homepage": "https://github.com/swalkinshaw"
+    },
+    {
+      "name": "QWp6t",
+      "email": "craig@roots.io",
+      "homepage": "https://github.com/qwp6t"
     }
   ],
   "keywords": [
@@ -23,16 +28,31 @@
     "issues": "https://github.com/roots/soil/issues",
     "forum": "https://discourse.roots.io/"
   },
+  "autoload": {
+    "psr-4": {
+      "Roots\\Soil\\": "src/"
+    },
+    "files": [
+        "src/helpers.php"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Roots\\Soil\\Tests\\": "tests/",
+      "Roots\\Soil\\Tests\\Fixtures\\Modules\\": "tests/__fixtures__/modules/"
+    }
+  },
   "require": {
-    "php": ">=5.4.0",
-    "composer/installers": "~1.0"
+    "php": ">=5.6.0"
   },
   "require-dev": {
-    "squizlabs/php_codesniffer": "^2.5.1"
+    "squizlabs/php_codesniffer": "^3.5",
+    "brain/monkey": "^2.4",
+    "phpunit/phpunit": "^9.3",
+    "mockery/mockery": "^1.4"
   },
   "scripts": {
-    "test": [
-      "vendor/bin/phpcs --extensions=php --ignore=vendor/ -n -s ."
-    ]
+    "test": "vendor/bin/phpunit",
+    "lint": "vendor/bin/phpcs --standard=PSR12 --extensions=php --ignore=vendor/ -n -s src"
   }
 }

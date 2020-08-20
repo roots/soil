@@ -19,7 +19,7 @@ Soil is a commercial plugin available from [https://roots.io/plugins/soil/](http
   </thead>
   <tbody>
     <tr>
-      <td>PHP &gt;= 5.4.x</td>
+      <td>PHP &gt;= 5.6.x</td>
       <td><code>php -v</code></td>
       <td>
         <a href="http://php.net/manual/en/install.php">php.net</a>
@@ -56,31 +56,31 @@ wp plugin activate soil
 ## Modules
 
 * **Cleaner WordPress markup**<br>
-  `add_theme_support('soil-clean-up');`
+  `add_theme_support('soil', 'clean-up');`
 
 * **Disable REST API**<br>
-  `add_theme_support('soil-disable-rest-api');`
+  `add_theme_support('soil', 'disable-rest-api');`
 
 * **Disable asset versioning**<br>
-  `add_theme_support('soil-disable-asset-versioning');`
+  `add_theme_support('soil', 'disable-asset-versioning');`
 
 * **Disable trackbacks**<br>
-  `add_theme_support('soil-disable-trackbacks');`
+  `add_theme_support('soil', 'disable-trackbacks');`
 
-* **Google Analytics** ([more info](https://github.com/roots/soil/wiki/Google-Analytics))<br>
-  `add_theme_support('soil-google-analytics', 'UA-XXXXX-Y');`
+* **Google Analytics**<br>
+  `add_theme_support('soil', 'google-analytics');`
 
 * **Move all JS to the footer**<br>
-  `add_theme_support('soil-js-to-footer');`
+  `add_theme_support('soil, 'js-to-footer');`
 
 * **Cleaner walker for navigation menus**<br>
-  `add_theme_support('soil-nav-walker');`
+  `add_theme_support('soil', 'nav-walker');`
 
 * **Convert search results from `/?s=query` to `/search/query/`**<br>
-  `add_theme_support('soil-nice-search');`
+  `add_theme_support('soil', 'nice-search');`
 
 * **Root relative URLs**<br>
-  `add_theme_support('soil-relative-urls');`
+  `add_theme_support('soil', 'relative-urls');`
 
 And in a format you can copy & paste into your theme:
 ```php
@@ -88,15 +88,17 @@ And in a format you can copy & paste into your theme:
  * Enable features from Soil when plugin is activated
  * @link https://roots.io/plugins/soil/
  */
-add_theme_support('soil-clean-up');
-add_theme_support('soil-disable-rest-api');
-add_theme_support('soil-disable-asset-versioning');
-add_theme_support('soil-disable-trackbacks');
-add_theme_support('soil-google-analytics', 'UA-XXXXX-Y');
-add_theme_support('soil-js-to-footer');
-add_theme_support('soil-nav-walker');
-add_theme_support('soil-nice-search');
-add_theme_support('soil-relative-urls');
+add_theme_support('soil', [
+    'clean-up',
+    'disable-rest-api',
+    'disable-asset-versioning',
+    'disable-trackbacks',
+    'google-analytics',
+    'js-to-footer',
+    'nav-walker',
+    'nice-search',
+    'relative-urls'
+]);
 ```
 
 ## Support
