@@ -8,6 +8,8 @@ use PHPUnit\Framework\TestCase as FrameworkTestCase;
 
 use function Brain\Monkey\Functions\stubs;
 
+// phpcs:disable PHPCompatibility.FunctionDeclarations.NewReturnTypeDeclarations.voidFound
+
 class TestCase extends FrameworkTestCase
 {
     use MockeryPHPUnitIntegration;
