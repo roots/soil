@@ -36,7 +36,7 @@ class DomTest extends TestCase
             <span>baz</span>
         ');
 
-        $count = count($doc->xpath('//span'));
+        $count = $doc->xpath('//span')->length;
 
         $this->assertEquals(4, $count);
     }
