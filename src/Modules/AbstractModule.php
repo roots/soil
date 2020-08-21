@@ -127,7 +127,11 @@ abstract class AbstractModule
      */
     protected function condition()
     {
-        $features = (array) $GLOBALS['_wp_theme_features']['soil'][0] ?? [];
+        $features = [];
+
+        if (isset($GLOBALS['_wp_theme_features']['soil'][0])) {
+            $features = (array) $GLOBALS['_wp_theme_features']['soil'][0];
+        }
 
         return apply_filters(
             'soil/load-module/' . $this->provides(),
@@ -167,7 +171,7 @@ abstract class AbstractModule
             $view = null;
         }
 
-        $view = $view ?? ($this->provides() . '.php');
+        $view = $view ?: ($this->provides() . '.php');
         extract($data);
         ob_start();
         include __DIR__ . "/../../resources/views/{$view}";
