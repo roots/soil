@@ -2,7 +2,7 @@
 
 namespace Roots\Soil\Tests;
 
-if (version_compare(phpversion(), '7.0', '<')) {
+if (version_compare(phpversion(), '7.1', '<')) {
     require __DIR__ . '/TestCase56.php';
 }
 
