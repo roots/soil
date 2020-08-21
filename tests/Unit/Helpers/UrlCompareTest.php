@@ -1,6 +1,6 @@
 <?php
 
-namespace Roots\Soil\Tests\Unit;
+namespace Roots\Soil\Tests\Unit\Helpers;
 
 use PHPUnit\Framework\TestCase;
 
