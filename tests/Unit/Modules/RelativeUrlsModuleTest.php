@@ -1,6 +1,6 @@
 <?php
 
-namespace Roots\Soil\Tests\Unit;
+namespace Roots\Soil\Tests\Unit\Modules;
 
 use Roots\Soil\Modules\RelativeUrlsModule;
 use Roots\Soil\Tests\TestCase;
