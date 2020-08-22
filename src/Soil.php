@@ -85,10 +85,14 @@ class Soil
             apply_filters('soil/modules', (array) $this->modules)
         ));
 
-        if (! $this->features) {
+        if (!$this->features) {
             $this->features = isset($GLOBALS['_wp_theme_features']['soil'][0])
                 ? $this->features($GLOBALS['_wp_theme_features']['soil'][0])
-                : [];
+                : null;
+        }
+
+        if (!$this->features) {
+            return;
         }
 
         foreach ($modules as $module) {
@@ -97,10 +101,13 @@ class Soil
                 $module = new $module();
             }
 
-            if ($this->features) {
-                $module->register($this->features[$module->provides()]);
-            } else {
+            if (!$this->features) {
                 $module->register(['enabled' => true]);
+                continue;
+            }
+
+            if (isset($this->features[$module->provides()]) && $this->features[$module->provides()]) {
+                $module->register($this->features[$module->provides()]);
             }
         }
 

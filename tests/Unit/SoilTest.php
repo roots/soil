@@ -21,7 +21,7 @@ class SoilTest extends TestCase
 
         $module->shouldReceive('provides');
 
-        $soil = new Soil([$module]);
+        $soil = new Soil([$module], [$module->provides()]);
 
         $module->shouldReceive('register')
             ->once()
@@ -34,7 +34,7 @@ class SoilTest extends TestCase
     public function it_should_fire_init_hook_when_invoked()
     {
         $module = new StubModule();
-        $soil = new Soil([$module]);
+        $soil = new Soil([$module], [$module->provides()]);
 
         $soil();
 
