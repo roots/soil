@@ -11,8 +11,3 @@ function fixture($fixture)
 {
     return __DIR__ . '/__fixtures__/' . $fixture;
 }
-
-function global_return($function, $return)
-{
-    $GLOBALS[$function] = $return;
-}
