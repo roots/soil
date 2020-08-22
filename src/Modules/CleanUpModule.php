@@ -217,22 +217,6 @@ class CleanUpModule extends AbstractModule
     }
 
     /**
-     * Wrap embedded media as suggested by Readability
-     *
-     * @internal Used by `embed_oembed_html`
-     *
-     * @link https://gist.github.com/965956
-     * @link http://www.readability.com/publishers/guidelines#publisher
-     *
-     * @param string $cache
-     * @return string
-     */
-    public function embedWrap($cache)
-    {
-        return '<div class="entry-content-asset">' . $cache . '</div>';
-    }
-
-    /**
      * Remove the default site tagline from RSS feed.
      *
      * @internal Used by `get_bloginfo_rss`
