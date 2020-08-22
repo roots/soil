@@ -3,6 +3,7 @@
 namespace Roots\Soil\Modules;
 
 use Roots\Soil\Exceptions\LifecycleException;
+use Roots\Soil\Options;
 
 use function add_action;
 use function add_filter;
@@ -20,6 +21,20 @@ abstract class AbstractModule
      * @var string
      */
     protected $name;
+
+    /**
+     * Module options.
+     *
+     * @var Options
+     */
+    protected $options = false;
+
+    /**
+     * Default options.
+     *
+     * @var array
+     */
+    protected $defaults = ['enabled' => true];
 
     /**
      * Whether this module has already loaded.
@@ -63,10 +78,11 @@ abstract class AbstractModule
      *
      * This attaches the module to its hook.
      *
+     * @param array|Options $options
      * @return string
      * @throws LifecycleException
      */
-    public function register()
+    public function register($options = null)
     {
         if ($this->loaded) {
             throw new LifecycleException(
@@ -80,7 +96,35 @@ abstract class AbstractModule
             );
         }
 
+        $this->options = $this->processOptions($options);
         $this->loaded = add_action($this->hook, $this);
+    }
+
+    /**
+     * Generate Options object based on input options array.
+     *
+     * @param array|Options $options
+     * @return Options
+     */
+    protected function processOptions($options)
+    {
+        if (! isset($options['enabled'])) {
+            $options = ['enabled' => true];
+        }
+
+        $options = $options instanceof Options ? $options : new Options($options);
+
+        return $options->merge($this->defaults);
+    }
+
+    /**
+     * Retrieve module options.
+     *
+     * @return Options
+     */
+    public function getOptions()
+    {
+        return $this->options;
     }
 
     /**
@@ -127,15 +171,9 @@ abstract class AbstractModule
      */
     protected function condition()
     {
-        $features = [];
-
-        if (isset($GLOBALS['_wp_theme_features']['soil'][0])) {
-            $features = (array) $GLOBALS['_wp_theme_features']['soil'][0];
-        }
-
         return apply_filters(
             'soil/load-module/' . $this->provides(),
-            in_array($this->provides(), $features) && (!is_admin() || wp_doing_ajax())
+            $this->options->enabled && (!is_admin() || wp_doing_ajax())
         );
     }
 
@@ -169,6 +207,10 @@ abstract class AbstractModule
         if (is_array($view) && empty($data)) {
             $data = $view;
             $view = null;
+        }
+
+        if (empty($data)) {
+            $data = $this->options->all();
         }
 
         $view = $view ?: ($this->provides() . '.php');

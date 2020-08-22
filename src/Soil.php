@@ -18,14 +18,22 @@ class Soil
     protected $modules;
 
     /**
+     * List of supported modules and options.
+     *
+     * @var array[]
+     */
+    protected $features;
+
+    /**
      * Create an instance of Soil.
      *
      * @param string[]|object[]
      * @return void
      */
-    public function __construct($modules = [])
+    public function __construct($modules = [], $features = [])
     {
         $this->modules = $modules;
+        $this->features = $this->features($features);
     }
 
     /**
@@ -77,16 +85,60 @@ class Soil
             apply_filters('soil/modules', (array) $this->modules)
         ));
 
+        if (! $this->features) {
+            $this->features = isset($GLOBALS['_wp_theme_features']['soil'][0])
+                ? $this->features($GLOBALS['_wp_theme_features']['soil'][0])
+                : [];
+        }
+
         foreach ($modules as $module) {
             if (is_string($module)) {
                 /** @var \Roots\Soil\Modules\AbstractModule */
                 $module = new $module();
             }
 
-            $module->register();
+            if ($this->features) {
+                $module->register($this->features[$module->provides()]);
+            } else {
+                $module->register(['enabled' => true]);
+            }
         }
 
         do_action('soil/init');
+    }
+
+    protected function features($features = [])
+    {
+        $modules = [];
+
+        foreach ((array) $features as $module => $options) {
+            // add_theme_support('soil', ['module'])
+            if (is_int($module)) {
+                $module = $options;
+                $options = ['enabled' => true];
+            }
+
+            // add_theme_support('soil', ['module' => true])
+            if (is_bool($options)) {
+                $options = ['enabled' => $options];
+            }
+
+            // add_theme_support('soil', ['module' => 'some-option'])
+            if (is_array($options) && isset($options[0]) && !isset($options[1])) {
+                $options = ['options' => $options[0]];
+            }
+
+            // if an option is specified,
+            // let's assume the module should be enabled
+            // add_theme_support('soil', ['module' => ['option' => 'value']])
+            if (! isset($options['enabled'])) {
+                $options['enabled'] = true;
+            }
+
+            $modules[$module] = (array) $options;
+        }
+
+        return $modules;
     }
 
     public static function discoverModules($glob = __DIR__ . '/Modules/*Module.php', $namespace = __NAMESPACE__ . '\\Modules')

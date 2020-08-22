@@ -17,12 +17,15 @@ class SoilTest extends TestCase
     /** @test */
     public function it_should_register_modules_when_invoked()
     {
-        $module = m::mock(AbstractModule::class);
+        $module = m::mock(AbstractModule::class)->makePartial();
+
+        $module->shouldReceive('provides');
+
         $soil = new Soil([$module]);
 
         $module->shouldReceive('register')
             ->once()
-            ->withNoArgs();
+            ->with(['enabled' => true]);
 
         $soil();
     }
@@ -30,7 +33,7 @@ class SoilTest extends TestCase
     /** @test */
     public function it_should_fire_init_hook_when_invoked()
     {
-        $module = StubModule::class;
+        $module = new StubModule();
         $soil = new Soil([$module]);
 
         $soil();
