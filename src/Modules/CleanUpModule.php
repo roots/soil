@@ -70,7 +70,7 @@ class CleanUpModule extends AbstractModule
          *
          * @var bool
          */
-        'disable_gutenberg_block_css' => false,
+        'disable_gutenberg_block_css' => true,
 
         /**
          * Disable extra RSS feeds.
@@ -118,9 +118,11 @@ class CleanUpModule extends AbstractModule
             'clean_html5_markup' => 'cleanHtmlMarkup',
         ];
 
-        foreach (array_filter($this->options->all()) as $option) {
-            if (isset($tasks[$option])) {
-                $this->{$tasks[$option]}();
+        $enabled_tasks = array_keys(array_filter($this->options->all()));
+
+        foreach ($enabled_tasks as $task) {
+            if (isset($tasks[$task])) {
+                $this->{$tasks[$task]}();
             }
         }
     }
