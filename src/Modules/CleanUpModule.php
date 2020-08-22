@@ -39,72 +39,148 @@ class CleanUpModule extends AbstractModule
     protected $name = 'clean-up';
 
     /**
+     * Default options.
+     *
+     * @var array
+     */
+    protected $defaults = [
+        /**
+         * Enable this module.
+         *
+         * @var bool
+         */
+        'enabled' => true,
+
+        /**
+         * Obscure and suppress WordPress information.
+         *
+         * @var bool
+         */
+        'wp_obscurity' => true,
+
+        /**
+         * Disable WordPress emojis.
+         *
+         * @var bool
+         */
+        'disable_emojis' => true,
+
+        /**
+         * Disable Gutenberg block library CSS.
+         *
+         * @var bool
+         */
+        'disable_gutenberg_block_css' => false,
+
+        /**
+         * Disable extra RSS feeds.
+         *
+         * @var bool
+         */
+        'disable_extra_rss' => true,
+
+        /**
+         * Disable recent comments CSS.
+         *
+         * @var bool
+         */
+        'disable_rececent_comments_css' => true,
+
+        /**
+         * Disable gallery CSS.
+         *
+         * @var bool
+         */
+        'disable_gallery_css' => true,
+
+        /**
+         * Clean HTML5 markup.
+         *
+         * @var bool
+         */
+        'clean_html5_markup' => true,
+    ];
+
+    /**
      * Module handle.
      *
      * @return void
      */
     public function handle()
     {
-        $this->filter('init', 'headCleanup');
-        $this->filter('language_attributes', 'languageAttributes');
-        $this->filter('body_class', 'bodyClass');
-        $this->filter('embed_oembed_html', 'embedWrap');
-        $this->filter('get_bloginfo_rss', 'removeDefaultSiteTagline');
+        $tasks = [
+            'wp_obscurity' => 'wpObscurity',
+            'disable_emojis' => 'disableEmojis',
+            'disable_gutenberg_block_css' => 'disableGutenbergBlockCss',
+            'disable_extra_rss' => 'disableExtraRss',
+            'disable_rececent_comments_css' => 'disableRecentCommentsCss',
+            'disable_gallery_css' => 'disableGalleryCss',
+            'clean_html5_markup' => 'cleanHtmlMarkup',
+        ];
 
-        $this->filters([
-            'get_avatar',          // <img />
-            'comment_id_fields',   // <input />
-            'post_thumbnail_html'  // <img />
-        ], 'removeSelfClosingTags');
-
-        if (class_exists(DOMDocument::class)) {
-            $this->filter('style_loader_tag', 'cleanStylesheetLinks');
-            $this->filter('script_loader_tag', 'cleanScriptTags');
+        foreach (array_filter($this->options->all()) as $option) {
+            if (isset($tasks[$option])) {
+                $this->{$tasks[$option]}();
+            }
         }
-
-        $this->removeCommentsFeed();
-        $this->removeWordPressVersionFromRssFeeds();
     }
 
     /**
-     * Clean up output <head> section.
-     *
-     * @internal Used by `init`
-     *
-     * @link https://wpengineer.com/1438/wordpress-header/
+     * Obscure and suppress WordPress information.
      *
      * @return void
      */
-    public function headCleanup()
+    protected function wpObscurity()
     {
-        remove_action('wp_head', 'feed_links_extra', 3);
+        $this->filter('get_bloginfo_rss', 'removeDefaultSiteTagline');
+        add_filter('the_generator', '__return_false');
         remove_action('wp_head', 'rsd_link');
         remove_action('wp_head', 'wlwmanifest_link');
         remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10);
         remove_action('wp_head', 'wp_generator');
         remove_action('wp_head', 'wp_shortlink_wp_head', 10);
+        remove_action('wp_head', 'rest_output_link_wp_head', 10);
+        remove_action('wp_head', 'wp_oembed_add_discovery_links');
+        remove_action('wp_head', 'wp_oembed_add_host_js');
+    }
+
+    /**
+     * Disable WordPress emojis.
+     *
+     * @return void
+     */
+    protected function disableEmojis()
+    {
         remove_action('wp_head', 'print_emoji_detection_script', 7);
         remove_action('admin_print_scripts', 'print_emoji_detection_script');
         remove_action('wp_print_styles', 'print_emoji_styles');
         remove_action('admin_print_styles', 'print_emoji_styles');
-        remove_action('wp_head', 'wp_oembed_add_discovery_links');
-        remove_action('wp_head', 'wp_oembed_add_host_js');
-        remove_action('wp_head', 'rest_output_link_wp_head', 10);
         remove_filter('the_content_feed', 'wp_staticize_emoji');
         remove_filter('comment_text_rss', 'wp_staticize_emoji');
         remove_filter('wp_mail', 'wp_staticize_emoji_for_email');
-        add_filter('use_default_gallery_style', '__return_false');
         add_filter('emoji_svg_url', '__return_false');
-        add_filter('show_recent_comments_widget_style', '__return_false');
     }
 
     /**
-     * Remove comments feed from <head>.
+     * Disable Gutenberg block library CSS.
      *
      * @return void
      */
-    public function removeCommentsFeed()
+    protected function disableGutenbergBlockCss()
     {
+        add_action('wp_enqueue_scripts', function () {
+            wp_dequeue_style('wp-block-library');
+        }, 200);
+    }
+
+    /**
+     * Disable extra RSS feeds.
+     *
+     * @return void
+     */
+    protected function disableExtraRss()
+    {
+        remove_action('wp_head', 'feed_links_extra', 3);
         add_action('wp_head', 'ob_start', 1, 0);
         add_action('wp_head', function () {
             $pattern = '/.*' . preg_quote(esc_url(get_feed_link('comments_' . get_default_feed())), '/') . '.*[\r\n]+/';
@@ -113,13 +189,49 @@ class CleanUpModule extends AbstractModule
     }
 
     /**
-     * Remove the WordPress version from RSS feeds.
+     * Disable recent comments CSS.
      *
      * @return void
      */
-    public function removeWordPressVersionFromRssFeeds()
+    protected function disableRecentCommentsCss()
     {
-        add_filter('the_generator', '__return_false');
+        add_filter('show_recent_comments_widget_style', '__return_false');
+    }
+
+    /**
+     * Disable gallery CSS.
+     *
+     * @return void
+     */
+    protected function disableGalleryCss()
+    {
+        add_filter('use_default_gallery_style', '__return_false');
+    }
+
+    /**
+     * Clean HTML5 markup.
+     *
+     * @return void
+     */
+    protected function cleanHtmlMarkup()
+    {
+        $this->filter('body_class', 'bodyClass');
+        $this->filter('language_attributes', 'languageAttributes');
+
+        if (class_exists(DOMDocument::class)) {
+            $this->filter('style_loader_tag', 'cleanStylesheetLinks');
+            $this->filter('script_loader_tag', 'cleanScriptTags');
+        }
+
+        $this->filters([
+            'get_avatar',          // <img />
+            'comment_id_fields',   // <input />
+            'post_thumbnail_html', // <img />
+        ], 'removeSelfClosingTags');
+
+        add_filter('site_icon_meta_tags', function ($meta_tags) {
+            return array_map([$this, 'site_icon_meta_tags'], $meta_tags);
+        }, 20);
     }
 
     /**
