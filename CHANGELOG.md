@@ -1,3 +1,8 @@
+### 4.0.0: August 29th, 2020
+* BREAKING CHANGE - Refactor entire code base
+* Add options support for modules
+* Remove oEmbed wrapper due to incompatibility with Gutenberg
+
 ### 3.9.0: December 7th, 2019
 * Enable beacon tracking for Google Analytics ([#243](https://github.com/roots/soil/pull/243))
 * Add support for GitHub Updater plugin ([#241](https://github.com/roots/soil/pull/241))
