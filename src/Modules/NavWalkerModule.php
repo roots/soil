@@ -14,7 +14,7 @@ class NavWalkerModule extends AbstractModule
      *
      * @var string
      */
-    protected $name = 'js-to-footer';
+    protected $name = 'nav-walker';
 
     /**
      * Module handle.
