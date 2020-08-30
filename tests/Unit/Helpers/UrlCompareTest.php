@@ -21,6 +21,9 @@ class UrlCompareTest extends TestCase
     {
         $this->assertTrue(compare_base_url('https://example.test', '/'));
         $this->assertTrue(compare_base_url('https://example.test', '/foobar'));
+
+        $this->assertTrue(compare_base_url('/', '/foobar'));
+        $this->assertFalse(compare_base_url('/foobar', 'https://example.test/foobar'));
     }
 
     /** @test */
@@ -28,6 +31,9 @@ class UrlCompareTest extends TestCase
     {
         $this->assertFalse(compare_base_url('https://example.test', '//foobar.test'));
         $this->assertTrue(compare_base_url('https://example.test', '//example.test'));
+
+        $this->assertFalse(compare_base_url('//foobar.test', 'https://example.test'));
+        $this->assertFalse(compare_base_url('//foobar.test', 'http://example.test'));
     }
 
     /** @test */

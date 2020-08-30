@@ -33,11 +33,15 @@ function compare_base_url($base_url, $input_url, $strict_scheme = true)
 
     $base_url = parse_url($base_url);
 
-    if (!isset($input_url['scheme'])) {
-        $input_url['scheme'] = $base_url['scheme'];
+    if (!isset($base_url['host'])) {
+        return false;
     }
 
-    if ($strict_scheme && ($base_url['scheme'] !== $input_url['scheme'])) {
+    if (!$strict_scheme || !isset($input_url['scheme']) || !isset($base_url['scheme'])) {
+        $input_url['scheme'] = $base_url['scheme'] = 'soil';
+    }
+
+    if (($base_url['scheme'] !== $input_url['scheme'])) {
         return false;
     }
 
