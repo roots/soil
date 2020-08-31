@@ -1,3 +1,6 @@
+### 4.1.0: August 31st, 2020
+* Add fallback autoloader when Composer isn't present
+
 ### 4.0.0: August 29th, 2020
 * BREAKING CHANGE - Refactor entire code base
 * Add options support for modules
