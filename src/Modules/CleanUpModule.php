@@ -84,7 +84,7 @@ class CleanUpModule extends AbstractModule
          *
          * @var bool
          */
-        'disable_rececent_comments_css' => true,
+        'disable_recent_comments_css' => true,
 
         /**
          * Disable gallery CSS.
@@ -113,7 +113,7 @@ class CleanUpModule extends AbstractModule
             'disable_emojis' => 'disableEmojis',
             'disable_gutenberg_block_css' => 'disableGutenbergBlockCss',
             'disable_extra_rss' => 'disableExtraRss',
-            'disable_rececent_comments_css' => 'disableRecentCommentsCss',
+            'disable_recent_comments_css' => 'disableRecentCommentsCss',
             'disable_gallery_css' => 'disableGalleryCss',
             'clean_html5_markup' => 'cleanHtmlMarkup',
         ];
