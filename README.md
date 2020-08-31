@@ -146,7 +146,7 @@ add_theme_support('soil', [
 		/**
 		 * Disable recent comments CSS.
 		 */
-		'disable_rececent_comments_css',
+		'disable_recent_comments_css',
 
 		/**
 		 * Disable gallery CSS.
