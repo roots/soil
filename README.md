@@ -93,7 +93,7 @@ add_theme_support('soil', [
     'disable-rest-api',
     'disable-asset-versioning',
     'disable-trackbacks',
-    'google-analytics', => [
+    'google-analytics' => [
         'should_load' => WP_ENV === 'production', // Only load on production
         'google_analytics_id' => 'UA-XXXYYY',
         'anonymize_ip' => true,
