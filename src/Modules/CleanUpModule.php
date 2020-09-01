@@ -227,7 +227,7 @@ class CleanUpModule extends AbstractModule
         ], 'removeSelfClosingTags');
 
         add_filter('site_icon_meta_tags', function ($meta_tags) {
-            return array_map([$this, 'site_icon_meta_tags'], $meta_tags);
+            return array_map([$this, 'removeSelfClosingTags'], $meta_tags);
         }, 20);
     }
 
