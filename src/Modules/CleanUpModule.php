@@ -344,8 +344,8 @@ class CleanUpModule extends AbstractModule
      *
      * @internal Used by `get_avatar`, `comment_id_fields`, and `post_thumbnail_html`
      *
-     * @param string $html
-     * @return string
+     * @param string|string[] $html
+     * @return string|string[]
      */
     public function removeSelfClosingTags($html)
     {
