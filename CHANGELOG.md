@@ -1,3 +1,6 @@
+### 4.0.3: September 8th, 2020
+* Relative URLs module: Ensure `srcset` value is array
+
 ### 4.0.2: September 8th, 2020
 * Cleanup module: Fix notice for self-closing tags on site icon meta
 
