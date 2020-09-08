@@ -1,3 +1,6 @@
+### 4.0.2: September 8th, 2020
+* Cleanup module: Fix notice for self-closing tags on site icon meta
+
 ### 4.0.1: August 31st, 2020
 * Add fallback autoloader when Composer isn't present
 
