@@ -82,6 +82,10 @@ class RelativeUrlsModule extends AbstractModule
      */
     public function imageSrcset($sources)
     {
+        if (!is_array($sources)) {
+            return $sources;
+        }
+
         return array_map(function ($source) {
             $source['url'] = $this->relativeUrl($source['url']);
 
