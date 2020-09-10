@@ -40,7 +40,8 @@
     "psr-4": {
       "Roots\\Soil\\Tests\\": "tests/",
       "Roots\\Soil\\Tests\\Fixtures\\Modules\\": "tests/__fixtures__/modules/"
-    }
+    },
+    "exclude-from-classmap": ["/tests/TestCase56.php"]
   },
   "require": {
     "php": ">=5.6.0"
@@ -54,7 +55,7 @@
     "phpcompatibility/php-compatibility": "^9.3"
   },
   "scripts": {
-    "test": "vendor/bin/phpunit",
-    "lint": "vendor/bin/phpcs"
+    "test": "phpunit",
+    "lint": "phpcs"
   }
 }
