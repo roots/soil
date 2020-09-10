@@ -1,0 +1,45 @@
+name: Publish release
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  release:
+    name: Publish release
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup PHP, with composer and extensions
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.3'
+          coverage: xdebug
+        env:
+          COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Install Composer dependencies
+        run: composer install --no-progress --prefer-dist --optimize-autoloader --no-suggest --no-dev
+      - name: Cleanup unnecessary files
+        run: rm -rf .git .github .editorconfig .gitattributes .gitignore composer.json composer.lock phpcs.xml.dist phpunit.xml.dist tests
+      - name: Get the version
+        id: get_version
+        run: echo ::set-output name=version::${GITHUB_REF/refs\/tags\//}
+        shell: bash
+      - name: Create subfolder
+        run: mkdir soil && mv ./* soil/ 2>/dev/null
+        continue-on-error: true
+      - name: Create distributable zip file
+        uses: montudor/action-zip@v0.1.0
+        with:
+          args: zip -qq -r9 soil.zip soil
+      - name: Upload zip as release asset
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: soil.zip
+          asset_name: soil-${{ steps.get_version.outputs.version }}.zip
+          tag: ${{ github.ref }}
+          overwrite: true
