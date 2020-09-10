@@ -55,7 +55,7 @@
     "phpcompatibility/php-compatibility": "^9.3"
   },
   "scripts": {
-    "test": "vendor/bin/phpunit",
-    "lint": "vendor/bin/phpcs"
+    "test": "phpunit",
+    "lint": "phpcs"
   }
 }
