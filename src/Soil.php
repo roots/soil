@@ -131,14 +131,14 @@ class Soil
             }
 
             // add_theme_support('soil', ['module' => 'some-option'])
-            if (is_array($options) && isset($options[0]) && !isset($options[1])) {
-                $options = ['options' => $options[0]];
+            if (!is_array($options)) {
+                $options = ['options' => $options];
             }
 
             // if an option is specified,
             // let's assume the module should be enabled
             // add_theme_support('soil', ['module' => ['option' => 'value']])
-            if (! isset($options['enabled'])) {
+            if (!isset($options['enabled'])) {
                 $options['enabled'] = true;
             }
 
