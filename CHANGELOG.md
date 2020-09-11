@@ -1,3 +1,6 @@
+### 4.0.4: September 10th, 2020
+* Fix Google Analytics options: correctly support non-array default option
+
 ### 4.0.3: September 8th, 2020
 * Relative URLs module: Ensure `srcset` value is array
 
