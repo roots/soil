@@ -70,7 +70,7 @@ function is_production_environment()
 {
     if (function_exists('wp_get_environment_type')) {
         return wp_get_environment_type() === 'production';
-    } else if (defined('WP_ENV')) {
+    } elseif (defined('WP_ENV')) {
         return \WP_ENV === 'production';
     } else {
         return true;
