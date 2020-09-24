@@ -55,3 +55,24 @@ function compare_base_url($base_url, $input_url, $strict_scheme = true)
 
     return true;
 }
+
+
+/**
+ * Determine whether current environment type is production.
+ *
+ * Use wp_get_environment_type() if available (WordPress 5.5 or newer), otherwise check whether WP_ENV constant is set.
+ *
+ * Assume production as default environment type when neither wp_get_environment_type() nor WP_ENV are available.
+ *
+ * @return bool
+ */
+function is_production_environment()
+{
+    if (function_exists('wp_get_environment_type')) {
+        return wp_get_environment_type() === 'production';
+    } else if (defined('WP_ENV')) {
+        return \WP_ENV === 'production';
+    } else {
+        return true;
+    }
+}
