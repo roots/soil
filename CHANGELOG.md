@@ -1,3 +1,6 @@
+### unreleased ###
+* Google Analytics module: support checking production environment type via `wp_get_environment_type()`
+
 ### 4.0.4: September 10th, 2020
 * Fix Google Analytics options: correctly support non-array default option
 

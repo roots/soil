@@ -2,6 +2,8 @@
 
 namespace Roots\Soil\Modules;
 
+use function Roots\Soil\is_production_environment;
+
 /**
  * Moves all scripts to wp_footer action
  */
@@ -94,7 +96,7 @@ class GoogleAnalyticsModule extends AbstractModule
 
         if (!$options->should_load) {
             $options->should_load = !empty($options->google_analytics_id)
-                && (!defined('WP_ENV') || \WP_ENV === 'production')
+                && is_production_environment()
                 && !current_user_can('manage_options');
         }
 
