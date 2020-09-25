@@ -60,18 +60,19 @@ function compare_base_url($base_url, $input_url, $strict_scheme = true)
 /**
  * Determine whether current environment type is production.
  *
- * Use wp_get_environment_type() if available (WordPress 5.5 or newer), otherwise check whether WP_ENV constant is set.
+ * WP_ENV constant predates wp_get_environment_type function (introduced in WP 5.5), so check it first.
+ * See: https://github.com/roots/soil/pull/266
  *
- * Assume production as default environment type when neither wp_get_environment_type() nor WP_ENV are available.
+ * Assume production as default environment type when neither WP_ENV is set nor wp_get_environment_type() is available.
  *
  * @return bool
  */
 function is_production_environment()
 {
-    if (function_exists('wp_get_environment_type')) {
-        return wp_get_environment_type() === 'production';
-    } elseif (defined('WP_ENV')) {
+    if (defined('WP_ENV')) {
         return \WP_ENV === 'production';
+    } elseif (function_exists('wp_get_environment_type')) {
+        return wp_get_environment_type() === 'production';
     } else {
         return true;
     }
