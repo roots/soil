@@ -19,12 +19,12 @@ class ModuleTest extends TestCase
         $module = new StubModule();
         $this->assertFalse(has_action('soil/init', $module));
         $module->register();
-        $this->assertTrue(has_action('soil/init', $module));
+        $this->assertIsInt(has_action('soil/init', $module));
 
         $module = new CustomHookModule();
         $this->assertFalse(has_action('custom-hook', $module));
         $module->register();
-        $this->assertTrue(has_action('custom-hook', $module));
+        $this->assertIsInt(has_action('custom-hook', $module));
     }
 
     /** @test */
