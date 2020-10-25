@@ -1,3 +1,13 @@
+# ⚠ NOTICE
+
+You are viewing the `master` branch. Our default branch is `main`. Please use the `main` branch instead.
+
+https://github.com/roots/soil/tree/main
+
+**We will be deleting this branch on December 31, 2020.**
+
+----
+
 # Soil
 [![Packagist](https://img.shields.io/packagist/v/roots/soil.svg?style=flat-square)](https://packagist.org/packages/roots/soil)
 [![Packagist Downloads](https://img.shields.io/packagist/dt/roots/soil.svg?style=flat-square)](https://packagist.org/packages/roots/soil)
