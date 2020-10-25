@@ -53,9 +53,6 @@
     "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
     "phpcompatibility/php-compatibility": "^9.3"
   },
-  "suggest": {
-    "roots/soil": "dev-master is deprecated, use dev-main instead."
-  },
   "scripts": {
     "test": "phpunit",
     "lint": "phpcs"
