@@ -40,8 +40,7 @@
     "psr-4": {
       "Roots\\Soil\\Tests\\": "tests/",
       "Roots\\Soil\\Tests\\Fixtures\\Modules\\": "tests/__fixtures__/modules/"
-    },
-    "exclude-from-classmap": ["/tests/TestCase56.php"]
+    }
   },
   "require": {
     "php": ">=5.6.0"

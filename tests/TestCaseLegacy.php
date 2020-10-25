@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase as FrameworkTestCase;
 
 use function Brain\Monkey\Functions\stubs;
 
-class TestCase extends FrameworkTestCase
+class TestCaseLegacy extends FrameworkTestCase
 {
     use MockeryPHPUnitIntegration;
 

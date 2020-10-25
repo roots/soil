@@ -1,7 +1,9 @@
 <?php
 
+use Roots\Soil\Tests\TestCaseLegacy;
+
 if (version_compare(phpversion(), '7.1', '<')) {
-    require __DIR__ . '/TestCase56.php';
+    class_alias(TestCaseLegacy::class, 'Roots\Soil\Tests\TestCase');
 }
 
 require __DIR__ . '/../vendor/autoload.php';
