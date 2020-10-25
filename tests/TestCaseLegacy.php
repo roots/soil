@@ -32,4 +32,22 @@ class TestCaseLegacy extends FrameworkTestCase
         Monkey\tearDown();
         parent::tearDown();
     }
+
+    /**
+     * Asserts that a variable is of a given type.
+     *
+     * @param mixed $actual
+     * @param string $message
+     *
+     * @return void
+     *
+     * @throws ExpectationFailedException
+     * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
+     *
+     * @psalm-assert int $actual
+     */
+    public static function assertIsInt($actual, $message = '')
+    {
+        static::assertInternalType('int', $actual);
+    }
 }
