@@ -8,6 +8,7 @@
  * Author:             Roots
  * Author URI:         https://roots.io/
  * GitHub Plugin URI:  https://github.com/roots/soil
+ * Primary Branch:     main
  *
  * License:            MIT License
  * License URI:        https://opensource.org/licenses/MIT
