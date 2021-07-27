@@ -1,3 +1,6 @@
+### 4.0.6: July 27th, 2021
+* Fix reflected version in Wordpress Admin
+
 ### 4.0.5: July 27th, 2021
 * Fix fallback autoloader compatibility with similarly named class names in other namespaces
 * Google Analytics module: support checking production environment type via `wp_get_environment_type()`
