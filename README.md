@@ -71,7 +71,7 @@ wp plugin activate soil
   `add_theme_support('soil', ['google-analytics' => 'UA-XXXXX-Y']);`
 
 * **Move all JS to the footer**<br>
-  `add_theme_support('soil, 'js-to-footer');`
+  `add_theme_support('soil', 'js-to-footer');`
 
 * **Cleaner walker for navigation menus**<br>
   `add_theme_support('soil', 'nav-walker');`
