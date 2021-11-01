@@ -59,15 +59,6 @@ class NavWalker extends Walker_Nav_Menu
     public function displayElement($element, &$children_elements, $max_depth, $depth, $args, &$output)
     {
         $element->is_subitem = ((!empty($children_elements[$element->ID]) && (($depth + 1) < $max_depth || ($max_depth === 0))));
-
-        if ($element->is_subitem) {
-            foreach ($children_elements[$element->ID] as $child) {
-                if ($child->current_item_parent || compare_base_url($this->archive, $child->url)) {
-                    $element->classes[] = 'active';
-                }
-            }
-        }
-
         $element->is_active = (!empty($element->url) && strpos($this->archive, $element->url));
 
         if ($element->is_active && !$this->is_search) {
@@ -86,7 +77,7 @@ class NavWalker extends Walker_Nav_Menu
             $classes = str_replace('current_page_parent', '', $classes);
 
             if ($this->archive && !$this->is_search) {
-                if (compare_base_url($this->archive, $item->url)) {
+                if (strpos($item->url, $this->archive) !== false) {
                     $classes[] = 'active';
                 }
             }
