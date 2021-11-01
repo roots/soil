@@ -183,6 +183,7 @@ class CleanUpModule extends AbstractModule
     protected function disableExtraRss()
     {
         add_filter('feed_links_show_comments_feed', '__return_false');
+        remove_action('wp_head', 'feed_links_extra', 3);
     }
 
     /**
