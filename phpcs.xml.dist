@@ -25,4 +25,26 @@
     <rule ref="PSR1.Methods.CamelCapsMethodName.NotCamelCaps">
         <exclude-pattern>tests/*</exclude-pattern>
     </rule>
+
+    <!-- WordPress -->
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<property name="text_domain" type="array">
+				<element value="soil"/>
+			</property>
+		</properties>
+	</rule>
+    <rule ref="WordPress.CodeAnalysis.EmptyStatement"/>
+    <rule ref="WordPress.CodeAnalysis.EscapedNotTranslated"/>
+    <rule ref="WordPress.DB"/>
+    <rule ref="WordPress.DateTime"/>
+    <rule ref="WordPress.Security"/>
+    <rule ref="WordPress.Utils.I18nTextDomainFixer"/>
+    <rule ref="WordPress.PHP">
+        <exclude name="WordPress.PHP.YodaConditions"/>
+        <exclude name="WordPress.PHP.DisallowShortTernary"/>
+    </rule>
+    <rule ref="WordPress.WP">
+        <exclude name="WordPress.WP.TimezoneChange"/>
+    </rule>
 </ruleset>

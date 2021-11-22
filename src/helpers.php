@@ -2,6 +2,8 @@
 
 namespace Roots\Soil;
 
+use function wp_parse_url;
+
 /**
  * Checks whether two URLs share the same base URL.
  *
@@ -25,13 +27,13 @@ function compare_base_url($base_url, $input_url, $strict_scheme = true)
         return true;
     }
 
-    $input_url = parse_url($input_url);
+    $input_url = wp_parse_url($input_url);
 
     if (!isset($input_url['host'])) {
         return true;
     }
 
-    $base_url = parse_url($base_url);
+    $base_url = wp_parse_url($base_url);
 
     if (!isset($base_url['host'])) {
         return false;

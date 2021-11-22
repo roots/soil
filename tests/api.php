@@ -34,3 +34,16 @@ function trailingslashit($url)
 {
     return rtrim($url, '/\\') . '/';
 }
+
+/**
+ * Parse a URL and return its components
+ *
+ * @param string $url
+ * @param int $component
+ * @return array|string|int|null|false
+ */
+function wp_parse_url($url, $component = -1)
+{
+    // phpcs:ignore WordPress.WP.AlternativeFunctions.parse_url_parse_url
+    return parse_url($url, $component);
+}

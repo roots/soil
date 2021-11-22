@@ -1,5 +1,7 @@
 <?php
 
+// phpcs:disable WordPress.WP.EnqueuedResources
+
 namespace Roots\Soil\Tests\Unit\Modules;
 
 use Roots\Soil\Modules\CleanUpModule;

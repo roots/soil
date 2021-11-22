@@ -214,7 +214,7 @@ abstract class AbstractModule
         }
 
         $view = $view ?: ($this->provides() . '.php');
-        extract($data);
+        extract($data); // phpcs:ignore WordPress.PHP.DontExtract.extract_extract
         ob_start();
         include __DIR__ . "/../../resources/views/{$view}";
         return ob_get_clean();

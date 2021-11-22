@@ -312,7 +312,7 @@ class CleanUpModule extends AbstractModule
 
         // Add post/page slug if not present
         if (is_single() || is_page() && !is_front_page()) {
-            if (!in_array($slug = basename(get_permalink()), $classes)) {
+            if (!in_array($slug = basename(get_permalink()), $classes, true)) {
                 $classes[] = $slug;
             }
         }
@@ -336,7 +336,7 @@ class CleanUpModule extends AbstractModule
      */
     public function removeDefaultSiteTagline($bloginfo)
     {
-        $default_tagline = __('Just another WordPress site');
+        $default_tagline = __('Just another WordPress site'); // phpcs:ignore WordPress.WP.I18n.MissingArgDomain
         return ($bloginfo === $default_tagline) ? '' : $bloginfo;
     }
 
