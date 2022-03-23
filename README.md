@@ -7,6 +7,10 @@ A WordPress plugin which contains a collection of modules to apply theme-agnosti
 
 Soil is a commercial plugin available from [https://roots.io/plugins/soil/](https://roots.io/plugins/soil/). It's hosted on a public GitHub repository to allow for contributions from the community. It's also published on Packagist to allow easier installation with Composer.
 
+## Support
+
+Use [Roots Discourse](https://discourse.roots.io/) to ask questions, get support, or report issues. **[Soil must be purchased](https://roots.io/plugins/soil/) in order to get support.**
+
 ## Requirements
 
 <table>
@@ -235,11 +239,6 @@ add_theme_support('soil', [
 ]);
 ```
 </details>
-
-
-## Support
-
-Use the [Roots Discourse](https://discourse.roots.io/) to ask questions and get support. License is required.
 
 ## Contributing
 
