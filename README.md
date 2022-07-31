@@ -233,7 +233,7 @@ add_theme_support('soil', [
     /**
      * Convert absolute URLs to relative URLs
      *
-     * Inspired by {@link http://www.456bereastreet.com/archive/201010/how_to_make_wordpress_urls_root_relative/}
+     * Inspired by {@link https://web.archive.org/web/20180529232418/http://www.456bereastreet.com/archive/201010/how_to_make_wordpress_urls_root_relative/}
      */
     'relative-urls',
 ]);
