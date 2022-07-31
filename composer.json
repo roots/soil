@@ -58,5 +58,10 @@
     "test": "phpunit",
     "lint": "phpcs",
     "lint:fix": "phpcbf"
+  },
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
   }
 }
