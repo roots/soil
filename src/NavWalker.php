@@ -46,7 +46,7 @@ class NavWalker extends Walker_Nav_Menu
     {
         $cpt              = get_post_type();
 
-        $this->is_cpt     = in_array($cpt, get_post_types(array('_builtin' => false)));
+        $this->is_cpt     = in_array($cpt, get_post_types(array('_builtin' => false)), true);
         $this->archive    = get_post_type_archive_link($cpt);
         $this->is_search  = is_search();
     }

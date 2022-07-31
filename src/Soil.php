@@ -55,7 +55,7 @@ class Soil
      */
     public function removeModule($module)
     {
-        if (($index = array_search($module, $this->modules)) === false) {
+        if (($index = array_search($module, $this->modules, true)) === false) {
             return false;
         }
         unset($this->modules[$index]);

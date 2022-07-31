@@ -3,7 +3,7 @@
 namespace Roots\Soil\Modules;
 
 use function is_search;
-use function wp_redirect;
+use function wp_safe_redirect;
 use function get_search_link;
 
 /**
@@ -43,18 +43,21 @@ class NiceSearchModule extends AbstractModule
     {
         global $wp_rewrite;
 
-        if (!isset($wp_rewrite) || !is_object($wp_rewrite) || !$wp_rewrite->get_search_permastruct()) {
+        if (!isset($_SERVER['REQUEST_URI']) || !isset($wp_rewrite) || !is_object($wp_rewrite) || !$wp_rewrite->get_search_permastruct()) {
             return;
         }
+
+        // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+        $request = wp_unslash(filter_var($_SERVER['REQUEST_URI'], FILTER_SANITIZE_URL));
 
         $search_base = $wp_rewrite->search_base;
 
         if (
             is_search()
-            && strpos($_SERVER['REQUEST_URI'], "/{$search_base}/") === false
-            && strpos($_SERVER['REQUEST_URI'], '&') === false
+            && strpos($request, "/{$search_base}/") === false
+            && strpos($request, '&') === false
         ) {
-            wp_redirect(get_search_link());
+            wp_safe_redirect(get_search_link());
             exit;
         }
     }

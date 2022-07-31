@@ -35,8 +35,8 @@ class RelativeUrlsModule extends AbstractModule
     protected function condition()
     {
         return parent::condition()
-            && !isset($_GET['sitemap'])
-            && !in_array($GLOBALS['pagenow'], ['wp-login.php', 'wp-register.php']);
+            && !isset($_GET['sitemap']) // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+            && !in_array($GLOBALS['pagenow'], ['wp-login.php', 'wp-register.php'], true);
     }
 
     /**

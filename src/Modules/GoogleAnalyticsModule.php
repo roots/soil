@@ -110,6 +110,7 @@ class GoogleAnalyticsModule extends AbstractModule
      */
     public function handle()
     {
+        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         echo $this->render();
     }
 }
