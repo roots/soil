@@ -47,8 +47,10 @@ class NiceSearchModule extends AbstractModule
             return;
         }
 
+        // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+        $request = wp_unslash(filter_var($_SERVER['REQUEST_URI'], FILTER_SANITIZE_URL));
+
         $search_base = $wp_rewrite->search_base;
-        $request = wp_unslash(filter_input(INPUT_SERVER, 'REQUEST_URI', FILTER_SANITIZE_URL));
 
         if (
             is_search()
