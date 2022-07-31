@@ -249,7 +249,7 @@ class CleanUpModule extends AbstractModule
             $attributes[] = 'dir="rtl"';
         }
 
-        $lang = get_bloginfo('language');
+        $lang = esc_attr(get_bloginfo('language'));
 
         if ($lang) {
             $attributes[] = "lang=\"{$lang}\"";
