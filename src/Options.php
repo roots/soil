@@ -93,6 +93,7 @@ class Options implements ArrayAccess, IteratorAggregate, Countable
      *
      * @return Traversable
      */
+    #[\ReturnTypeWillChange]
     public function getIterator()
     {
         return $this->options;
@@ -103,6 +104,7 @@ class Options implements ArrayAccess, IteratorAggregate, Countable
      *
      * @return int
      */
+    #[\ReturnTypeWillChange]
     public function count()
     {
         return count($this->options);
@@ -114,6 +116,7 @@ class Options implements ArrayAccess, IteratorAggregate, Countable
      * @param string $key
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($key)
     {
         return $this->get($key);
@@ -126,6 +129,7 @@ class Options implements ArrayAccess, IteratorAggregate, Countable
      * @param mixed  $value
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($key, $value)
     {
         /**
@@ -150,6 +154,7 @@ class Options implements ArrayAccess, IteratorAggregate, Countable
      * @param string $key
      * @return bool
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($key)
     {
         return array_key_exists($key, $this->options);
@@ -161,6 +166,7 @@ class Options implements ArrayAccess, IteratorAggregate, Countable
      * @param string $key
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($key)
     {
         unset($this->options[$key]);
