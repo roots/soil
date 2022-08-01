@@ -1,3 +1,6 @@
+### 4.1.1: August 1st, 2022
+* Fix version number
+
 ### 4.1.0: August 1st, 2022
 * Fix: XSS vulnerability on `language_attributes`
 * Fix: Clean up - re-add disabling extra RSS feeds
