@@ -1,5 +1,9 @@
-### 4.0.6: July 27th, 2021
-* Fix reflected version in Wordpress Admin
+### 4.1.0: August 1st, 2022
+* Fix: XSS vulnerability on `language_attributes`
+* Fix: Clean up - re-add disabling extra RSS feeds
+* Fix: Nav walker - CPT items active classes
+* Fix: PHP 8.1 notices
+* Add: WPCS security and compatibility checks
 
 ### 4.0.5: July 27th, 2021
 * Fix fallback autoloader compatibility with similarly named class names in other namespaces
