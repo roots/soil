@@ -1,3 +1,5 @@
+### 4.1.2: April 4th, 2023
+* Google Analytics 4 Property Migration
 ### 4.1.1: August 1st, 2022
 * Fix version number
 
