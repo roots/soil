@@ -1,16 +1,16 @@
 <?php // phpcs:disable ?>
 <script>
   <?php if ($should_load) : ?>
-    window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
   <?php else : ?>
-    (function(s,o,i,l){s.ga=function(){s.ga.q.push(arguments);if(o['log'])o.log(i+l.call(arguments))}
-    s.ga.q=[];s.ga.l=+new Date;}(window,console,'Google Analytics: ',[].slice))
+    (function(s,o,i,l){s.gtag=function(){s.gtag.q.push(arguments);if(o['log'])o.log(i+l.call(arguments))}
+    s.gtag.q=[];}(window,console,'Google Analytics: ',[].slice))
   <?php endif; ?>
-  ga('create','<?= $google_analytics_id; ?>','auto');
-  <?php if ($optimize_id) : ?>ga('require','<?= $optimize_id; ?>');<?php endif; ?>
-  <?php if ($anonymize_ip) : ?>ga('set','anonymizeIp',true);<?php endif; ?>
-  ga('set','transport','beacon');ga('send','pageview');
+  gtag('js', new Date());
+  gtag('config', '<?= $google_analytics_id; ?>', {"transport_type":"beacon"});
+  gtag('event', 'page_view', { 'send_to': '<?= $google_analytics_id; ?>' });
 </script>
 <?php if ($should_load) : ?>
-  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+  <script async defer src="https://www.googletagmanager.com/gtag/js?id=<?= $google_analytics_id; ?>"></script>
 <?php endif; ?>
