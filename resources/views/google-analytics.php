@@ -1,16 +1,19 @@
 <?php // phpcs:disable ?>
+
+<?php if (!$should_load) return; ?>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=<?= $google_analytics_id; ?>"></script>
 <script>
-  <?php if ($should_load) : ?>
-    window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
-  <?php else : ?>
-    (function(s,o,i,l){s.ga=function(){s.ga.q.push(arguments);if(o['log'])o.log(i+l.call(arguments))}
-    s.ga.q=[];s.ga.l=+new Date;}(window,console,'Google Analytics: ',[].slice))
-  <?php endif; ?>
-  ga('create','<?= $google_analytics_id; ?>','auto');
-  <?php if ($optimize_id) : ?>ga('require','<?= $optimize_id; ?>');<?php endif; ?>
-  <?php if ($anonymize_ip) : ?>ga('set','anonymizeIp',true);<?php endif; ?>
-  ga('set','transport','beacon');ga('send','pageview');
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '<?= $google_analytics_id; ?>');
+
+  <?php foreach ($tags as $tag) : ?>
+    <?php if (!empty($tag[2])) : ?>
+      gtag(<?= $tag[0] ?>, <?= $tag[1] ?>, <?= $tag[2] ?>);
+    <?php else : ?>
+      gtag(<?= $tag[0] ?>, <?= $tag[1] ?>);
+    <?php endif; ?>
+  <?php endforeach; ?>
 </script>
-<?php if ($should_load) : ?>
-  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
-<?php endif; ?>

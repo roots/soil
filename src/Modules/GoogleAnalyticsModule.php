@@ -50,26 +50,15 @@ class GoogleAnalyticsModule extends AbstractModule
         'google_analytics_id' => null,
 
         /**
-         * Optimize container ID
+         * Additional Google Tags
          *
-         * Format: OPT-A1B2CD (previously: GTM-A1B2CD)
+         * Format: [['key', 'value', ['optional' => 'parameters']]]
          *
-         * @link https://support.google.com/optimize/answer/6262084
+         * @link https://developers.google.com/tag-platform/gtagjs/configure
          *
-         * @var string
+         * @var array
          */
-        'optimize_id' => null,
-
-        /**
-         * Anonymize user IP addresses.
-         *
-         * This might be required depending on region.
-         *
-         * @link https://github.com/roots/soil/pull/206
-         *
-         * @var bool
-         */
-        'anonymize_ip' => true,
+        'tags' => [],
     ];
 
     /**
@@ -98,6 +87,18 @@ class GoogleAnalyticsModule extends AbstractModule
             $options->should_load = !empty($options->google_analytics_id)
                 && is_production_environment()
                 && !current_user_can('manage_options');
+        }
+
+        if (!empty($options->tags)) {
+            $options->tags = array_map(function ($tag) {
+                return array_map(function ($value) {
+                    if (is_array($value)) {
+                        return json_encode($value);
+                    }
+
+                    return "'{$value}'";
+                }, $tag);
+            }, $options->tags);
         }
 
         return $options;
