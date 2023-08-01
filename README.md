@@ -97,7 +97,7 @@ add_theme_support('soil', [
     'disable-rest-api',
     'disable-asset-versioning',
     'disable-trackbacks',
-    'google-analytics' => 'UA-XXXXX-Y',
+    'google-analytics' => 'G-XXXXXXXXXX',
     'js-to-footer',
     'nav-walker',
     'nice-search',
@@ -195,22 +195,13 @@ add_theme_support('soil', [
         'google_analytics_id' => null,
 
         /**
-         * Optimize container ID
+         * Additional Google Tags
+         * 
+         * @link https://developers.google.com/tag-platform/gtagjs/configure
          *
-         * Format: OPT-A1B2CD (previously: GTM-A1B2CD)
-         *
-         * @link https://support.google.com/optimize/answer/6262084
+         * Format: [['key', 'value', ['optional' => 'parameters']]]
          */
-        'optimize_id' => null,
-
-        /**
-         * Anonymize user IP addresses.
-         *
-         * This might be required depending on region.
-         *
-         * @link https://github.com/roots/soil/pull/206
-         */
-        'anonymize_ip',
+        'tags' => [],
     ],
 
     /**
