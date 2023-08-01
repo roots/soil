@@ -1,3 +1,9 @@
+### 4.x.x: August 1st, 2023
+* Update the Google Analytics module to GA4
+* Remove deprecated `anonymize_ip` config from the GA module
+* Remove deprecated `optimize_id` config from the GA module
+* Add `tags` config to the GA module to create `gtag` commands
+
 ### 4.1.1: August 1st, 2022
 * Fix version number
 
