@@ -93,7 +93,7 @@ class GoogleAnalyticsModule extends AbstractModule
             $options->tags = array_map(function ($tag) {
                 return array_map(function ($value) {
                     if (is_array($value)) {
-                        return json_encode($value);
+                        return wp_json_encode($value);
                     }
 
                     return "'{$value}'";
