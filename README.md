@@ -196,10 +196,10 @@ add_theme_support('soil', [
 
         /**
          * Additional Google Tags
-         * 
-         * @link https://developers.google.com/tag-platform/gtagjs/configure
          *
          * Format: [['key', 'value', ['optional' => 'parameters']]]
+         * 
+         * @link https://developers.google.com/tag-platform/gtagjs/configure
          */
         'tags' => [],
     ],
