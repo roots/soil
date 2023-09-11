@@ -111,7 +111,7 @@ class NavWalker extends Walker_Nav_Menu
         add_filter('nav_menu_item_id', '__return_null');
 
         // Perform usual walk
-        $output = call_user_func_array(['parent', 'walk'], func_get_args());
+        $output = call_user_func_array(parent::walk(...), func_get_args());
 
         // Unregister filters
         remove_filter('nav_menu_css_class', [$this, 'cssClasses']);
