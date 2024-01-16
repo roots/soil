@@ -21,6 +21,7 @@
       "homepage": "https://github.com/qwp6t"
     }
   ],
+  "abandoned": "roots/acorn-prettify",
   "keywords": [
     "wordpress"
   ],
