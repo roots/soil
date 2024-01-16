@@ -2,14 +2,12 @@
 [![Packagist](https://img.shields.io/packagist/v/roots/soil.svg?style=flat-square)](https://packagist.org/packages/roots/soil)
 [![Packagist Downloads](https://img.shields.io/packagist/dt/roots/soil.svg?style=flat-square)](https://packagist.org/packages/roots/soil)
 ![Build Status](https://github.com/roots/soil/workflows/Compatibility%20Checks/badge.svg)
+[![Project Status: Unsupported – The project has reached a stable, usable state but the author(s) have ceased all work on it.](https://www.repostatus.org/badges/latest/unsupported.svg)](https://www.repostatus.org/#unsupported)
 
 A WordPress plugin which contains a collection of modules to apply theme-agnostic front-end modifications.
 
-Soil is a commercial plugin available from [https://roots.io/plugins/soil/](https://roots.io/plugins/soil/). It's hosted on a public GitHub repository to allow for contributions from the community. It's also published on Packagist to allow easier installation with Composer.
-
-## Support
-
-Use [Roots Discourse](https://discourse.roots.io/) to ask questions, get support, or report issues. **[Soil must be purchased](https://roots.io/plugins/soil/) in order to get support.**
+> [!CAUTION]
+> This plugin is no longer maintained. Use [Acorn Prettify](https://github.com/roots/acorn-prettify) instead.
 
 ## Requirements
 
